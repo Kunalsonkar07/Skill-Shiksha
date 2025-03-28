@@ -38,7 +38,7 @@ app.use(
 
 cloudinaryConnect();
 
-app.use("/api/v1/auth", userRoutes);
+app.use("/api/v1/auth", userRoutes)
 
 app.get("/", (req, res) => {
 	return res.json({
