@@ -10,6 +10,8 @@ const fileUpload = require("express-fileupload");
 const dotenv = require("dotenv");
 dotenv.config();
 const PORT = process.env.PORT || 4000;
+const userRoutes = require("./routes/User");
+
 //database connect
 
 const app = express() ;
@@ -35,6 +37,8 @@ app.use(
 )
 
 cloudinaryConnect();
+
+app.use("/api/v1/auth", userRoutes);
 
 app.get("/", (req, res) => {
 	return res.json({
