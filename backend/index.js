@@ -1,9 +1,10 @@
-const express = require('express');
+const express = require("express");
 
-
-const database = require( "./config/database.js") ;
-const {cloudinaryConnect } = require("./config/cloudinary");
-const cookieParser = require('cookie-parser');
+const database = require("./config/database.js");
+const courseRoutes = require("./routes/Course");
+const userRoutes = require("./routes/User");
+const { cloudinaryConnect } = require("./config/cloudinary");
+const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
 const fileUpload = require("express-fileupload");
@@ -14,11 +15,11 @@ const userRoutes = require("./routes/User");
 
 //database connect
 
-const app = express() ;
+const app = express();
 database.connect();
 //middlewares
 app.use(express.json());
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use(
@@ -28,25 +29,25 @@ app.use(
   })
 );
 
-
 app.use(
-	fileUpload({
-		useTempFiles:true,
-		tempFileDir:"/tmp",
-	})
-)
+  fileUpload({
+    useTempFiles: true,
+    tempFileDir: "/tmp",
+  })
+);
 
 cloudinaryConnect();
 
-app.use("/api/v1/auth", userRoutes)
+app.use("/api/v1/auth", userRoutes);
+app.use("/api/v1/course", courseRoutes);
 
 app.get("/", (req, res) => {
-	return res.json({
-		success:true,
-		message:'Your server is up and running....'
-	});
+  return res.json({
+    success: true,
+    message: "Your server is up and running....",
+  });
 });
 
 app.listen(PORT, () => {
-	console.log(`App is running at ${PORT}`)
-})
+  console.log(`App is running at ${PORT}`);
+});
