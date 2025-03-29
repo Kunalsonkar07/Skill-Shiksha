@@ -11,7 +11,7 @@ const fileUpload = require("express-fileupload");
 const dotenv = require("dotenv");
 dotenv.config();
 const PORT = process.env.PORT || 4000;
-const userRoutes = require("./routes/User");
+// const userRoutes = require("./routes/User");
 
 //database connect
 

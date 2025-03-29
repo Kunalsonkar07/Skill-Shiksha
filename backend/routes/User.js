@@ -22,3 +22,5 @@ router.post("/sendotp", sendotp)
 
 // Route for Changing the password
 router.post("/changepassword", auth, changePassword)
+
+module.exports = router 
