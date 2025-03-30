@@ -6,9 +6,11 @@ const userRoutes = require("./routes/User");
 const { cloudinaryConnect } = require("./config/cloudinary");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-
 const fileUpload = require("express-fileupload");
 const dotenv = require("dotenv");
+
+const messageRoutes = require('./routes/Message');
+
 dotenv.config();
 const PORT = process.env.PORT || 4000;
 // const userRoutes = require("./routes/User");
@@ -40,6 +42,7 @@ cloudinaryConnect();
 
 app.use("/api/v1/auth", userRoutes);
 app.use("/api/v1/course", courseRoutes);
+app.use("/api/v1/messages",messageRoutes);
 
 app.get("/", (req, res) => {
   return res.json({
