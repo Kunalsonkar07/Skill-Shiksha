@@ -1,6 +1,8 @@
 const express = require("express");
 
 const database = require("./config/database.js");
+const contactUsRoute = require("./routes/Contact");
+const profileRoutes = require("./routes/Profile");
 const courseRoutes = require("./routes/Course");
 const userRoutes = require("./routes/User");
 const { cloudinaryConnect } = require("./config/cloudinary");
@@ -41,8 +43,10 @@ app.use(
 cloudinaryConnect();
 
 app.use("/api/v1/auth", userRoutes);
+app.use("/api/v1/profile", profileRoutes);
 app.use("/api/v1/course", courseRoutes);
 app.use("/api/v1/messages",messageRoutes);
+app.use("/api/v1/reach", contactUsRoute);
 
 app.get("/", (req, res) => {
   return res.json({
