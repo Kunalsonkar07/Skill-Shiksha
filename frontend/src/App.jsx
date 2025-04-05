@@ -3,6 +3,7 @@ import "./App.css";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Navbar from "./components/common/Navbar";
+import Catalog from "./pages/Catalog.jsx";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
 
+        <Route path="catalog/:catalogName" element={<Catalog/>}/>
         <Route
           path="signup"
           element={
