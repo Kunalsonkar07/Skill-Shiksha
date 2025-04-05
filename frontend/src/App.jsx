@@ -1,15 +1,17 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-
   return (
-    <div className="w-screen min-h-screen bg-richblack-900 flex flex-col font-inter" data-theme="autumn">
-        <Navbar/>
-        <Routes>
-          <Route path="/" element={<Home/>} />
-          
-          <Route
+    <div
+      className="w-screen min-h-screen bg-richblack-900 flex flex-col font-inter"
+      data-theme="autumn"
+    >
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        <Route
           path="signup"
           element={
             <OpenRoute>
@@ -17,9 +19,17 @@ function App() {
             </OpenRoute>
           }
         />
-        </Routes>
+        <Route
+          path="login"
+          element={
+            <OpenRoute>
+              <Login />
+            </OpenRoute>
+          }
+        />
+      </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
