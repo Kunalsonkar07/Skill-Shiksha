@@ -1,5 +1,8 @@
 import { useState } from "react";
 import "./App.css";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Navbar from "./components/common/Navbar";
 
 function App() {
   return (
