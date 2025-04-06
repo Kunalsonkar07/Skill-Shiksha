@@ -1,11 +1,13 @@
 import { useState } from "react";
 import "./App.css";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import Navbar from "./components/common/Navbar";
+import Login from "./pages/Login.jsx";
+import Signup from "./pages/Signup.jsx";
+import Navbar from "./components/common/Navbar.jsx";
 import Catalog from "./pages/Catalog.jsx";
-import ForgotPassword from "./pages/ForgotPassword";
-import UpdatePassword from "./pages/UpdatePassword";
+import ForgotPassword from "./pages/ForgotPassword.jsx";
+import UpdatePassword from "./pages/UpdatePassword.jsx";
+import CourseDetails from "./pages/CourseDetails.jsx";
+import VerifyEmail from "./pages/VerifyEmail";
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
             </OpenRoute>
           }
         />
+        <Route path="courses/:courseId" element={<CourseDetails/>}/>
         <Route
           path="login"
           element={
@@ -42,6 +45,14 @@ function App() {
                 <ForgotPassword/>
               </OpenRoute>
             }
+        />
+        <Route
+          path="/verify-email"
+          element={
+            <OpenRoute>
+              <VerifyEmail />
+            </OpenRoute>
+          }
         />
 
           <Route
