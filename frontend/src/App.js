@@ -12,6 +12,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import PrivateRoute from "./components/core/Auth/PrivateRoute";
 import Dashboard from "./pages/Dashboard";
+import Settings from "./components/core/Dashboard/Settings";
+import MyProfile from "./components/core/Dashboard/MyProfile";
 
 function App() {
   return (
