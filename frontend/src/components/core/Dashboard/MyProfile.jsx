@@ -1,0 +1,116 @@
+import React from 'react'
+import { RiEditBoxLine } from "react-icons/ri"
+import { useSelector } from 'react-redux'
+import Spinner from '../../common/Spinner'
+import { formattedDate } from "../../../utils/dateFormatter"
+import { useNavigate } from 'react-router-dom'
+import UpdatePassword from './Settings/UpdatePassword'
+
+const MyProfile = () => {
+
+    const {loading,user} = useSelector( (state)=>state.profile)
+    const navigate = useNavigate();
+
+    if(loading)
+    {
+        return <Spinner/>
+    }
+
+    const clickHandler=()=>{
+        navigate("/dashboard/settings");
+    }
+
+  return (
+    <div className='text-white mt-6 ml-44 w-8/12 flex flex-col gap-8'>
+        <h1 className='text-white font-bold text-2xl mb-11'>My Profile</h1>
+
+        {/* section1 */}
+        <div className='flex bg-richblack-800 p-6 rounded-md items-center justify-between'>
+            <div className='flex gap-3 items-center'>
+                <img src={user?.image} className='aspect-square rounded-full w-16 object-cover' alt='profile-pic'/>
+                <div className='flex flex-col'>
+                    <h2 className='uppercase'>{user?.firstName} {user?.lastName}</h2>
+                    <p className='text-richblack-300'>{user?.email}</p>
+                </div>
+            </div>
+
+            <button onClick={clickHandler} className='bg-yellow-200 text-black p-1 px-2 rounded-sm flex items-center gap-2'>
+                <span>Edit</span>
+                <RiEditBoxLine/>
+            </button>
+        </div>
+
+        {/* section2 */}
+        <div className='flex bg-richblack-800 p-6 rounded-md items-center justify-between'>
+            <div className='flex flex-col gap-3'>
+                <h2>About</h2>
+                <p className='text-richblack-300'>
+                    {
+                        user.additionalDetail?.about ?? "Add about yourself"
+                    }
+                </p>
+            </div>
+
+            <button onClick={clickHandler} className='bg-yellow-200 text-black p-1 px-2 rounded-sm flex items-center gap-2'>
+                <span>Edit</span>
+                <RiEditBoxLine/>
+            </button>
+        </div>
+
+        {/* section3 */}
+        <div className="flex bg-richblack-800 p-11 rounded-md items-center justify-between">
+          <div className="flex flex-col gap-y-5">
+            <div>
+              <p className="mb-2 text-sm text-richblack-600">First Name</p>
+              <p className="text-sm font-medium text-richblack-5">
+                {user?.firstName}
+              </p>
+            </div>
+            <div>
+              <p className="mb-2 text-sm text-richblack-600">Email</p>
+              <p className="text-sm font-medium text-richblack-5">
+                {user?.email}
+              </p>
+            </div>
+            <div>
+              <p className="mb-2 text-sm text-richblack-600">Gender</p>
+              <p className="text-sm font-medium text-richblack-5">
+                {user?.additionalDetails?.gender ?? "Add Gender"}
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col gap-y-5">
+            <div>
+              <p className="mb-2 text-sm text-richblack-600">Last Name</p>
+              <p className="text-sm font-medium text-richblack-5">
+                {user?.lastName}
+              </p>
+            </div>
+            <div>
+              <p className="mb-2 text-sm text-richblack-600">Phone Number</p>
+              <p className="text-sm font-medium text-richblack-5">
+                {user?.additionalDetails?.contactNumber ?? "Add Contact Number"}
+              </p>
+            </div>
+            <div>
+              <p className="mb-2 text-sm text-richblack-600">Date Of Birth</p>
+              <p className="text-sm font-medium text-richblack-5">
+                {formattedDate(user?.additionalDetails?.dateOfBirth) ??
+                  "Add Date Of Birth"}
+              </p>
+            </div>
+          </div>
+          <button onClick={clickHandler} className='bg-yellow-200 text-black p-1 px-2 rounded-sm flex items-center gap-2'>
+                <span>Edit</span>
+                <RiEditBoxLine/>
+            </button>
+        </div>
+
+        {/* Update Password */}
+        <UpdatePassword/>
+        <div className='mb-7'></div>
+    </div>
+  )
+}
+
+export default MyProfile
