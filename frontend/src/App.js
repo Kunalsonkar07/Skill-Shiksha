@@ -80,6 +80,35 @@ function App() {
             }
             />
 
+            <Route
+              element={
+                <PrivateRoute>
+                  <Dashboard/>
+                </PrivateRoute>
+              }
+              >
+              <Route path="dashboard/my-profile" element={<MyProfile />} />
+              <Route path="dashboard/settings" element={<Settings/>}/>
+                  {
+                    user?.accountType === ACCOUNT_TYPE.STUDENT && (
+                      <>
+                      <Route path="dashboard/cart" element={<Cart />} />
+                      <Route path="dashboard/enrolled-courses" element={<EnrolledCourses />} />
+                      </>
+                    )
+                  }
+
+                  {
+                    user?.accountType === ACCOUNT_TYPE.INSTRUCTOR && (
+                      <>
+                      <Route path="dashboard/add-course" element={<AddCourse />} />
+                      <Route path="dashboard/my-courses" element={<MyCourses/>}/>
+                      <Route path="dashboard/edit-course/:courseId" element={<EditCourse/>}/>
+                      </>
+                    )
+                  }
+              </Route>
+
 
       </Routes>
     </div>
