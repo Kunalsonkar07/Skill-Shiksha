@@ -10,6 +10,8 @@ import CourseDetails from "./pages/CourseDetails.jsx";
 import VerifyEmail from "./pages/VerifyEmail";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import PrivateRoute from "./components/core/Auth/PrivateRoute";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
