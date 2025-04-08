@@ -71,6 +71,16 @@ function App() {
           />
 
           <Route
+            path = "/chat"
+            element={
+              <PrivateRoute>
+              <Chat/>
+              </PrivateRoute>
+            }
+
+            />
+
+          <Route
             path="/about"
             element={
                 <About/>
