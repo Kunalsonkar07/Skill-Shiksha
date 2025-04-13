@@ -7,6 +7,7 @@ const otpGenerator = require("otp-generator");
 const mailSender = require("../utils/mailSender");
 const { passwordUpdated } = require("../mail/templates/passwordUpdate");
 const Profile = require("../models/Profile");
+const otpTemplate = require("../mail/templates/emailVerificationTemplates");
 require("dotenv").config();
 
 exports.signup = async (req, res) => {
@@ -108,6 +109,9 @@ exports.login = async (req, res) => {
       })
     }
 
+    // console.log( "Email", email)  
+    // console.log( "Password", password)  
+
     // Find user with provided email
     const user = await User.findOne({ email }).populate("additionalDetails")
 
@@ -120,8 +124,10 @@ exports.login = async (req, res) => {
       })
     }
 
+    // console.log("User", user)
+
     // Generate JWT token and Compare Password
-    if (await bcrypt.compare(password, user.password)) {
+    if (await bcrypt.compare( password , user.password)) {
       const token = jwt.sign(
         { email: user.email, id: user._id, accountType: user.accountType },
         process.env.JWT_SECRET,
@@ -200,6 +206,11 @@ exports.sendotp = async (req, res) => {
     const otpPayload = { email, otp }
     const otpBody = await OTP.create(otpPayload)
     console.log("OTP Body", otpBody)
+
+    const sendingEmail = await mailSender( email ,"OTP FOR REGISTRSTION" ,  otpTemplate(otp) ) ;
+
+    console.log("Sending Email", sendingEmail) ;
+
     res.status(200).json({
       success: true,
       message: `OTP Sent Successfully`,

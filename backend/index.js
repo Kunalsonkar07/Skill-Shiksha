@@ -1,5 +1,5 @@
 const express = require("express");
-const {app,server} = require("../server/lib/socket");
+const {app,server} = require("./lib/socket");
 const database = require("./config/database.js");
 const contactUsRoute = require("./routes/Contact");
 const profileRoutes = require("./routes/Profile");
