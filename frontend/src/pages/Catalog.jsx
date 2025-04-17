@@ -10,7 +10,7 @@ import { useSelector } from "react-redux"
 import Error from "./Error"
 import { TabsDemo } from '../components/aceternity/TabsDemo';
 
-const Catalog = () => {
+const Catalog = () => { 
 
     const { loading } = useSelector((state) => state.profile)
   const { catalogName } = useParams()
@@ -154,8 +154,3 @@ const Catalog = () => {
     }
     
     export default Catalog
-
-
-
-
-    
