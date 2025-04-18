@@ -1,31 +1,31 @@
 import "./App.css";
 import { Route, Routes, useNavigate } from "react-router-dom";
-import Home from "./pages/Home";
-import Navbar from "./components/common/Navbar";
-import OpenRoute from "./components/core/Auth/OpenRoute";
+import Home from "./pages/Home.jsx";
+import Navbar from "./components/common/Navbar.jsx";
+import OpenRoute from "./components/core/Auth/OpenRoute.jsx";
 
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import Login from "./pages/Login.jsx";
+import Signup from "./pages/Signup.jsx";
 // import ForgotPassword from "./pages/ForgotPassword";
 // import UpdatePassword from "./pages/UpdatePassword";
 // import VerifyEmail from "./pages/VerifyEmail";
 // import About from "./pages/About";
 // import Contact from "./pages/Contact";
-import MyProfile from "./components/core/Dashboard/MyProfile";
+import MyProfile from "./components/core/Dashboard/MyProfile.jsx";
 // import Dashboard from "./pages/Dashboard";
-import PrivateRoute from "./components/core/Auth/PrivateRoute";
+import PrivateRoute from "./components/core/Auth/PrivateRoute.jsx";
 import Error from "./pages/Error"
 import Settings from "./components/core/Dashboard/Settings";
 import { useDispatch, useSelector } from "react-redux";
 import EnrolledCourses from "./components/core/Dashboard/EnrolledCourses";
 import Cart from "./components/core/Dashboard/Cart";
 import { ACCOUNT_TYPE } from "./utils/constants";
-import ForgotPassword from "./pages/ForgotPassword";
-import UpdatePassword from "./pages/UpdatePassword";
-import VerifyEmail from "./pages/VerifyEmail";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Dashboard from "./pages/Dashboard";
+import ForgotPassword from "./pages/ForgotPassword.jsx";
+import UpdatePassword from "./pages/UpdatePassword.jsx";
+import VerifyEmail from "./pages/VerifyEmail.jsx";
+import About from "./pages/About.jsx";
+import Contact from "./pages/Contact.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
 import AddCourse from "./components/core/Dashboard/AddCourse";
 import MyCourses from "./components/core/Dashboard/MyCourses";
 import EditCourse from "./components/core/Dashboard/EditCourse.jsx";
@@ -37,9 +37,9 @@ import CourseDetails from "./pages/CourseDetails.jsx";
 // import EditCourse from "./components/core/Dashboard/EditCourse";
 // import Catalog from "./pages/Catalog";
 // import CourseDetails from "./pages/CourseDetails";
-import ViewCourse from "./pages/ViewCourse";
-import VideoDetails from "./components/core/ViewCourse/VideoDetails";
-import Instructor from "./components/core/Dashboard/InstructorDashboard/Instructor";
+import ViewCourse from "./pages/ViewCourse.jsx";
+import VideoDetails from "./components/core/ViewCourse/VideoDetails.jsx";
+import Instructor from "./components/core/Dashboard/InstructorDashboard/Instructor.jsx";
 
 function App() {
   const dispatch = useDispatch();
