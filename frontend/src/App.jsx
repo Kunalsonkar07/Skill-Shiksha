@@ -28,7 +28,7 @@ import Contact from "./pages/Contact.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import AddCourse from "./components/core/Dashboard/AddCourse";
 import MyCourses from "./components/core/Dashboard/MyCourses";
-import EditCourse from "./components/core/Dashboard/EditCourse.jsx";
+import EditCourse from "./components/core/Dashboard/EditCourse";
 import Catalog from "./pages/Catalog.jsx";
 import Chat from "./pages/Chat.jsx";
 import CourseDetails from "./pages/CourseDetails.jsx";
