@@ -44,9 +44,11 @@ import Instructor from "./components/core/Dashboard/InstructorDashboard/Instruct
 function App() {
   // const dispatch = useDispatch();
   // const navigate = useNavigate();
+//   const fullState = useSelector((state) => state)
+// console.log("Redux State:", fullState)
 
   const { user } = useSelector((state) => state.profile);
-
+  // console.log("User from Redux:", user);
   return (
     <div
       className="w-screen min-h-screen bg-richblack-900 flex flex-col font-inter"
