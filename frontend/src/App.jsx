@@ -127,7 +127,7 @@ function App() {
         >
           <Route path="dashboard/my-profile" element={<MyProfile />} />
           <Route path="dashboard/settings" element={<Settings />} />
-          {user?.accountType === ACCOUNT_TYPE.STUDENT && (
+          {user && (
             <>
               <Route path="dashboard/cart" element={<Cart />} />
               <Route
@@ -137,7 +137,7 @@ function App() {
             </>
           )}
 
-          {user?.accountType === ACCOUNT_TYPE.INSTRUCTOR && (
+          {user && (
             <>
               <Route path="dashboard/add-course" element={<AddCourse />} />
               <Route path="dashboard/my-courses" element={<MyCourses />} />
@@ -229,7 +229,7 @@ function App() {
       }>
 
       {
-        user?.accountType === ACCOUNT_TYPE.STUDENT && (
+        user && (
           <>
           <Route 
             path="view-course/:courseId/section/:sectionId/sub-section/:subSectionId"
