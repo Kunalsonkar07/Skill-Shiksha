@@ -126,7 +126,7 @@ exports.verifyPayment = async (req, res) => {
     await enrollStudents(courseid, userId ) ;
     // return res.redirect ( `http://localhost:5173/paymentSuccess?reference=${razorpay_payment_id}`) ;
     // enrollStudents( )
-    return res.redirect ( `http://localhost:3000/courses/${courseid}`) ;
+    return res.redirect ( `http://localhost:5173/courses/${courseid}`) ;
     // return res.status(200).json({ success: true, message: "Payment Verified" })
   }
 

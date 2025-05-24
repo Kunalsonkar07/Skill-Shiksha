@@ -14,24 +14,32 @@ import { fetchCourseDetails } from "./courseDetailsAPI";
 
 const {COURSE_PAYMENT_API, COURSE_VERIFY_API, SEND_PAYMENT_SUCCESS_EMAIL_API} = studentEndpoints;
 
-// function loadScript(src) {
-//     return new Promise((resolve) => {
-//         const script = document.createElement("script");
-//         script.src = src;
+function loadScript(src) {
+    return new Promise((resolve) => {
+        const script = document.createElement("script");
+        script.src = src;
 
-//         script.onload = () => {
-//             resolve(true);
-//         }
-//         script.onerror= () =>{
-//             resolve(false);
-//         }
-//         document.body.appendChild(script);
-//     })
-// }
+        script.onload = () => {
+            resolve(true);
+        }
+        script.onerror= () =>{
+            resolve(false);
+        }
+        document.body.appendChild(script);
+    })
+}
 
 
 export async function buyCourse(token, courses, userDetails, navigate, dispatch) {
     const toastId = toast.loading("Loading...");
+
+    const res = await loadScript("https://checkout.razorpay.com/v1/checkout.js");
+    if (!res) {
+        toast.error("Razorpay SDK failed to load");
+        toast.dismiss(toastId);
+        return;
+    }
+
     try{
         const res = await fetchCourseDetails( courses ) ;
         console.log(res) ;
