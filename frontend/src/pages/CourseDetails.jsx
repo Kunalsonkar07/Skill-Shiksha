@@ -3,7 +3,7 @@ import { BiInfoCircle } from "react-icons/bi"
 import { HiOutlineGlobeAlt } from "react-icons/hi"
 import ReactMarkdown from "react-markdown";
 import { useDispatch, useSelector } from "react-redux"
-import { useNavigate, useParams } from "react-router-dom"
+import { useLocation, useNavigate, useParams } from "react-router-dom"
 
 import ConfirmationModal from "../components/common/ConfirmationModal"
 import Footer from "../components/common/Footer"
@@ -15,14 +15,21 @@ import { fetchCourseDetails } from "../services/operations/courseDetailsAPI"
 import { buyCourse } from "../services/operations/studentFeaturesAPI"
 import GetAvgRating from "../utils/avgRating"
 import Error from "./Error"
+import toast from "react-hot-toast";
 
 function CourseDetails() {
+  const location = useLocation();
   const { user } = useSelector((state) => state.profile)
   const { token } = useSelector((state) => state.auth)
   const { loading } = useSelector((state) => state.profile)
   const { paymentLoading } = useSelector((state) => state.course)
   const dispatch = useDispatch()
   const navigate = useNavigate()
+
+  const queryParams = new URLSearchParams(location.search);
+
+  let paymentSuccess = queryParams.get("paymentSuccess");
+  const ref = queryParams.get("reference");
 
   // Getting courseId from url parameter
   const { courseId } = useParams()
@@ -42,6 +49,22 @@ function CourseDetails() {
         console.log("Could not fetch Course Details")
       }
     })()
+
+    if (paymentSuccess) {
+      // setConfirmationModal({
+      //   text1: "Payment Successful",
+      //   text2: "You have been enrolled in the course.",
+      //   btn1Text: "Go to Dashboard",
+      //   btn2Text: "Continue Browsing",
+      //   btn1Handler: () => navigate("/dashboard/enrolled-courses"),
+      //   btn2Handler: () => navigate("/"),
+      // })
+      toast.success("Payment Successful! You have been enrolled in the course.", {
+        duration: 500,
+        position: "top-center",
+      });
+    }
+
   }, [courseId])
 
   // console.log("response: ", response)
@@ -124,6 +147,11 @@ function CourseDetails() {
       </div>
     )
   }
+
+
+  
+
+  
 
   return (
     <>
