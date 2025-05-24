@@ -39,7 +39,7 @@ export default function RequirementsField({
 
   return (
     <div className="flex flex-col space-y-2">
-      <label className="text-sm text-richblack-5" htmlFor={name}>
+      <label className="text-sm text-[#F1F2FF]" htmlFor={name}>
         {label} <sup className="text-pink-200">*</sup>
       </label>
       <div className="flex flex-col items-start space-y-2">
@@ -48,7 +48,7 @@ export default function RequirementsField({
           id={name}
           value={requirement}
           onChange={(e) => setRequirement(e.target.value)}
-          className="form-style w-full text-white bg-richblack-700 p-3 rounded-md border-b-2 border-white focus:border-2 outline-none"
+          className="form-style w-full text-white bg-[#2C333F] p-3 rounded-md border-b-2 border-white focus:border-2 outline-none"
         />
         <button
           type="button"
@@ -61,7 +61,7 @@ export default function RequirementsField({
       {requirementsList.length > 0 && (
         <ul className="mt-2 list-inside list-disc">
           {requirementsList.map((requirement, index) => (
-            <li key={index} className="flex items-center text-richblack-5">
+            <li key={index} className="flex items-center text-[#F1F2FF]">
               <span>{requirement}</span>
               <button
                 type="button"

@@ -7,9 +7,9 @@ export default function Cart() {
   const { total, totalItems } = useSelector((state) => state.cart)
 
   return (
-    <div className="text-richblack-50 mt-6 ml-44 w-8/12 flex flex-col gap-8">
-      <h1 className="mb-14 text-3xl font-medium text-richblack-5">Cart</h1>
-      <p className="border-b border-b-richblack-400 pb-2 font-semibold text-richblack-400">
+    <div className="text-[#F1F2FF]0 mt-6 ml-44 w-8/12 flex flex-col gap-8">
+      <h1 className="mb-14 text-3xl font-medium text-[#F1F2FF]">Cart</h1>
+      <p className="border-b border-b-richblack-400 pb-2 font-semibold text-[#6E727F]">
         {totalItems} Courses in Cart
       </p>
       {total > 0 ? (
@@ -18,7 +18,7 @@ export default function Cart() {
           <RenderTotalAmount />
         </div>
       ) : (
-        <p className="mt-14 text-center text-3xl text-richblack-100">
+        <p className="mt-14 text-center text-3xl text-[#AFB2BF]">
           Your cart is empty
         </p>
       )}

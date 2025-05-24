@@ -18,7 +18,7 @@ const Dashboard = () => {
 
   return (
 <div className={`relative flex`}>
-    <div className='w-[13rem] mx-auto  relative min-h-screen border-r-2 border-white bg-richblack-800'>
+    <div className='w-[13rem] mx-auto  relative min-h-screen border-r-2 border-white bg-[#161D29]'>
         <Sidebar />
     </div>
 

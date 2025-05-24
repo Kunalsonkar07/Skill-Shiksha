@@ -104,7 +104,7 @@ const CourseBuilderForm = () => {
             <input
               placeholder='Add a section to build your course'
               {...register("sectionName", { required: true })}
-              className='text-[#999DAA] bg-richblack-700 p-2 rounded-md  
+              className='text-[#999DAA] bg-[#2C333F] p-2 rounded-md  
               border-b-2 border-white focus:border-2 outline-none w-full'
             />
             {errors.sectionName && (
@@ -124,7 +124,7 @@ const CourseBuilderForm = () => {
 
             {editSectionName && (
               <button onClick={cancelEdit}
-              className='text-sm text-richblack-300 underline
+              className='text-sm text-[#838894] underline
               mt-auto '
               >
                   Cancel Edit
@@ -141,7 +141,7 @@ const CourseBuilderForm = () => {
       <div className="flex justify-end gap-x-3 mt-6 mb-9">
               <button
                 onClick={goBack}
-                className={`flex cursor-pointer items-center gap-x-2 rounded-md bg-richblack-300 py-[8px] px-[20px] font-semibold text-richblack-900`}
+                className={`flex cursor-pointer items-center gap-x-2 rounded-md bg-[#838894] py-[8px] px-[20px] font-semibold text-[#000814]`}
               >
                 Back
               </button>

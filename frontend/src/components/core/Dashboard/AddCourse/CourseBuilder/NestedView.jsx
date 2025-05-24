@@ -65,13 +65,13 @@ const NestedView = ({ handleChangeEditSectionName }) => {
   }
   return (
     <>
-    <div className='bg-richblack-700 text-white rounded-md relative p-3'>
+    <div className='bg-[#2C333F] text-white rounded-md relative p-3'>
         {course?.courseContent.map((section)=>
             <details key={section._id} open>
             <summary className="flex cursor-pointer items-center justify-between border-b-2 border-b-richblack-600 py-2">
               <div className="flex items-center gap-x-3">
-                <RxDropdownMenu className="text-2xl text-richblack-50" />
-                <p className="font-semibold text-richblack-50">
+                <RxDropdownMenu className="text-2xl text-[#F1F2FF]0" />
+                <p className="font-semibold text-[#F1F2FF]0">
                   {section.sectionName}
                 </p>
               </div>
@@ -86,8 +86,8 @@ const NestedView = ({ handleChangeEditSectionName }) => {
                         <RiDeleteBin6Line onClick={()=>{handler(section._id)}}/>
                     </button>
 
-                    <span className="font-medium text-richblack-300">|</span>
-                    <AiFillCaretDown className={`text-xl text-richblack-300`} />
+                    <span className="font-medium text-[#838894]">|</span>
+                    <AiFillCaretDown className={`text-xl text-[#838894]`} />
 
                 </div>
                 </summary>
@@ -99,17 +99,17 @@ const NestedView = ({ handleChangeEditSectionName }) => {
                         className="flex cursor-pointer items-center justify-between gap-x-3 border-b-2 border-b-richblack-600 py-2"
                         >
                         <div className="flex items-center gap-x-3 py-2 ">
-                            <RxDropdownMenu className="text-2xl text-richblack-50" />
-                            <p className="font-semibold text-richblack-50">
+                            <RxDropdownMenu className="text-2xl text-[#F1F2FF]0" />
+                            <p className="font-semibold text-[#F1F2FF]0">
                             {data.title}
                             </p>
                         </div>
                         <div onClick={(e)=>e.stopPropagation()} className="flex items-center gap-x-3">
                             <button onClick={()=>{setEditSubSection({...data,sectionId:section._id})}}>
-                                <MdEdit className="text-xl text-richblack-300" />
+                                <MdEdit className="text-xl text-[#838894]" />
                             </button>
                             <button onClick={()=>{handler1(section._id,data._id)}}>
-                                <RiDeleteBin6Line className="text-xl text-richblack-300" />
+                                <RiDeleteBin6Line className="text-xl text-[#838894]" />
                             </button>
                         </div>
                     </div>

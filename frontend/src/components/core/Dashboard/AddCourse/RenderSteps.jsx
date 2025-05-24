@@ -37,11 +37,11 @@ export default function RenderSteps() {
                 className={`grid cursor-default aspect-square w-[34px] place-items-center rounded-full border-[1px] ${
                   step === item.id
                     ? "border-yellow-50 bg-yellow-900 text-yellow-50"
-                    : "border-richblack-700 bg-richblack-800 text-richblack-300"
+                    : "border-richblack-700 bg-[#161D29] text-[#838894]"
                 } ${step > item.id && "bg-yellow-50 text-yellow-50"}} `}
               >
                 {step > item.id ? (
-                  <FaCheck className="font-bold text-richblack-900" />
+                  <FaCheck className="font-bold text-[#000814]" />
                 ) : (
                   item.id
                 )}
@@ -71,7 +71,7 @@ export default function RenderSteps() {
               
               <p
                 className={`text-sm ${
-                  step >= item.id ? "text-richblack-5" : "text-richblack-500"
+                  step >= item.id ? "text-[#F1F2FF]" : "text-[#F1F2FF]00"
                 }`}
               >
                 {item.title}

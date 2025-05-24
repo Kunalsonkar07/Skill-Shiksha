@@ -22,7 +22,7 @@ const CodeBlocks = ({
         {heading}
 
         {/* Sub Heading */}
-        <div className="text-richblack-300 text-base font-bold w-[85%] -mt-3">
+        <div className="text-[#838894] text-base font-bold w-[85%] -mt-3">
           {subheading}
         </div>
 
@@ -45,7 +45,7 @@ const CodeBlocks = ({
       sm:leading-6 relative w-[100%] lg:w-[470px] ">
         {backgroundGradient}
         {/* Indexing */}
-        <div className="text-center flex flex-col   w-[10%] select-none text-richblack-400 font-inter font-bold ">
+        <div className="text-center flex flex-col   w-[10%] select-none text-[#6E727F] font-inter font-bold ">
           <p>1</p>
           <p>2</p>
           <p>3</p>

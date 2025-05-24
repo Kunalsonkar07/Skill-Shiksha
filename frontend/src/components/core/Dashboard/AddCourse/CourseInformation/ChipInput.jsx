@@ -50,7 +50,7 @@ const ChipInput = ({name,placeholder,label,register,errors,setValue,getValues}) 
  return (
     <div className="flex flex-col space-y-2">
       {/* Render the label for the input */}
-      <label className="text-sm text-richblack-5" htmlFor={name}>
+      <label className="text-sm text-[#F1F2FF]" htmlFor={name}>
         {label} <sup className="text-pink-200">*</sup>
       </label>
       {/* Render the chips and input */}
@@ -59,7 +59,7 @@ const ChipInput = ({name,placeholder,label,register,errors,setValue,getValues}) 
         {chips.map((chip, index) => (
           <div
             key={index}
-            className="m-1 flex items-center rounded-full bg-yellow-400 px-2 py-1 text-sm text-richblack-5"
+            className="m-1 flex items-center rounded-full bg-yellow-400 px-2 py-1 text-sm text-[#F1F2FF]"
           >
             {/* Render the chip value */}
             {chip}
@@ -80,7 +80,7 @@ const ChipInput = ({name,placeholder,label,register,errors,setValue,getValues}) 
           type="text"
           placeholder={placeholder}
           onKeyDown={handleKeyDown}
-          className="form-style w-full text-white bg-richblack-700 p-3 rounded-md border-b-2 border-white focus:border-2 outline-none"
+          className="form-style w-full text-white bg-[#2C333F] p-3 rounded-md border-b-2 border-white focus:border-2 outline-none"
         />
       </div>
       {/* Render an error message if the input is required and not filled */}

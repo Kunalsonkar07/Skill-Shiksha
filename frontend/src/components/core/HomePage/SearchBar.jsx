@@ -66,8 +66,8 @@ const SearchBar = () => {
 
       {/* Display the filtered course names below the search bar */}
       {word.length > 0 && (
-        <div className="absolute left-[50%] top-[130%] z-[1000] w-[100%] max-w-[300px] translate-x-[-50%] translate-y-[10px] flex flex-col rounded-lg bg-richblack-5 p-4 text-richblack-900 shadow-lg">
-          <div className="absolute left-[50%] top-0 -z-10 h-6 w-6 translate-x-[80%] translate-y-[-40%] rotate-45 select-none rounded bg-richblack-5"></div>
+        <div className="absolute left-[50%] top-[130%] z-[1000] w-[100%] max-w-[300px] translate-x-[-50%] translate-y-[10px] flex flex-col rounded-lg bg-[#F1F2FF] p-4 text-[#000814] shadow-lg">
+          <div className="absolute left-[50%] top-0 -z-10 h-6 w-6 translate-x-[80%] translate-y-[-40%] rotate-45 select-none rounded bg-[#F1F2FF]"></div>
           {course.length > 0 ? (
             <div className="bg-gray-100 p-4 rounded-lg shadow-md max-h-60 overflow-y-auto">
               <div className="flex flex-col gap-2">

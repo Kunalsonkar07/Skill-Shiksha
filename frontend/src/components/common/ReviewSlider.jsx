@@ -53,7 +53,7 @@ function ReviewSlider() {
           {reviews.map((review, i) => {
             return (
               <SwiperSlide key={i}>
-                <div className="flex flex-col gap-3 bg-richblack-800 p-3 text-[14px] text-richblack-25">
+                <div className="flex flex-col gap-3 bg-[#161D29] p-3 text-[14px] text-[#DBDDEA]">
                   <div className="flex items-center gap-4">
                     <img
                       src={
@@ -65,13 +65,13 @@ function ReviewSlider() {
                       className="h-9 w-9 rounded-full object-cover"
                     />
                     <div className="flex flex-col">
-                      <h1 className="font-semibold text-richblack-5">{`${review?.user?.firstName} ${review?.user?.lastName}`}</h1>
-                      <h2 className="text-[12px] font-medium text-richblack-500">
+                      <h1 className="font-semibold text-[#F1F2FF]">{`${review?.user?.firstName} ${review?.user?.lastName}`}</h1>
+                      <h2 className="text-[12px] font-medium text-[#F1F2FF]00">
                         {review?.course?.courseName}
                       </h2>
                     </div>
                   </div>
-                  <p className="font-medium text-richblack-25">
+                  <p className="font-medium text-[#DBDDEA]">
                     {review?.review.split(" ").length > truncateWords
                       ? `${review?.review
                           .split(" ")

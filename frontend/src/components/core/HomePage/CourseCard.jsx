@@ -10,25 +10,25 @@ const CourseCard = ({cardData, currentCard, setCurrentCard}) => {
       className={`w-[360px] lg:w-[30%] ${
         currentCard === cardData?.heading
           ? "bg-white shadow-[12px_12px_0_0] shadow-yellow-50"
-          : "bg-richblack-800"
-      }  text-richblack-25 h-[300px] box-border cursor-pointer`}
+          : "bg-[#161D29]"
+      }  text-[#DBDDEA] h-[300px] box-border cursor-pointer`}
       onClick={() => setCurrentCard(cardData?.heading)}
     >
       <div className="border-b-[2px] border-richblack-400 border-dashed h-[80%] p-6 flex flex-col gap-3">
         <div
           className={` ${
-            currentCard === cardData?.heading && "text-richblack-800"
+            currentCard === cardData?.heading && "text-[#161D29]"
           } font-semibold text-[20px]`}
         >
           {cardData?.heading}
         </div>
 
-        <div className="text-richblack-400">{cardData?.description}</div>
+        <div className="text-[#6E727F]">{cardData?.description}</div>
       </div>
 
       <div
         className={`flex justify-between ${
-          currentCard === cardData?.heading ? "text-blue-300" : "text-richblack-300"
+          currentCard === cardData?.heading ? "text-blue-300" : "text-[#838894]"
         } px-6 py-3 font-medium`}
       >
         {/* Level */}

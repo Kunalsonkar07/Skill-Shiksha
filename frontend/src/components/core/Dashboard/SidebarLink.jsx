@@ -15,7 +15,7 @@ const SidebarLink = ({link,iconName}) => {
   return (
     <NavLink
     to={link.path}
-    className={`relative ${matchRoute(link.path)?"bg-yellow-800 text-yellow-50":"bg-opacity-0 text-richblack-300"}`}
+    className={`relative ${matchRoute(link.path)?"bg-yellow-800 text-yellow-50":"bg-opacity-0 text-[#838894]"}`}
     >
 
         <span

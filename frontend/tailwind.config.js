@@ -23,23 +23,9 @@ module.exports = {
         400: "#6E727F",
         500: "#585D69",
         600: "#424854",
-        700: "#2C333F",
+        700: "#424854",
         800: "#161D29",
         900: "#000814",
-      },
-      red: {
-        5: "#FFEAEA",
-        25: "#FFBFBF",
-        50: "#FF9494",
-        100: "#FF6969",
-        200: "#FF3E3E",
-        300: "#FF1414",
-        400: "#E60000",
-        500: "#B80000",
-        600: "#8A0000",
-        700: "#5C0000",
-        800: "#2E0000",
-        900: "#140000",
       },
       richblue: {
         5: "#ECF5FF",
@@ -125,60 +111,6 @@ module.exports = {
         800: "#3D2A01",
         900: "#251400",
       },
-      autumn:{
-        base: {
-          100: 'oklch(98% 0.02 240)',
-          200: 'oklch(95% 0.03 240)',
-          300: 'oklch(92% 0.04 240)',
-          content: 'oklch(20% 0.05 240)',
-        },
-        primary: {
-          DEFAULT: 'oklch(55% 0.3 240)', // Default primary
-          content: 'oklch(98% 0.01 240)',
-        },
-        secondary: {
-          DEFAULT: 'oklch(70% 0.25 200)', // Default secondary
-          content: 'oklch(98% 0.01 200)',
-        },
-        accent: {
-          DEFAULT: 'oklch(65% 0.25 160)', // Default accent
-          content: 'oklch(98% 0.01 160)',
-        },
-        neutral: {
-          DEFAULT: 'oklch(50% 0.05 240)', // Default neutral
-          content: 'oklch(98% 0.01 240)',
-        },
-        info: {
-          DEFAULT: 'oklch(70% 0.2 220)', // Info color
-          content: 'oklch(98% 0.01 220)',
-        },
-        success: {
-          DEFAULT: 'oklch(65% 0.25 140)', // Success color
-          content: 'oklch(98% 0.01 140)',
-        },
-        warning: {
-          DEFAULT: 'oklch(80% 0.25 80)', // Warning color
-          content: 'oklch(20% 0.05 80)',
-        },
-        error: {
-          DEFAULT: 'oklch(65% 0.3 30)', // Error color
-          content: 'oklch(98% 0.01 30)',
-        },
-      },
-      orange: {
-        5: "#FFF4E0",
-        25: "#FFE0B2",
-        50: "#FFCC80",
-        100: "#FFB74D",
-        200: "#FFA726",
-        300: "#FF9800",
-        400: "#FB8C00",
-        500: "#F57C00",
-        600: "#EF6C00",
-        700: "#E65100",
-        800: "#D84315",
-        900: "#BF360C",
-      },
       "pure-greys": {
         5: "#F9F9F9",
         25: "#E2E2E2",
@@ -239,3 +171,5 @@ module.exports = {
     ],
   }
 }
+
+

@@ -32,8 +32,8 @@ export default function UpdatePassword() {
   return (
     <>
       <form onSubmit={handleSubmit(submitPasswordForm)}>
-        <div className="my-10 flex flex-col gap-y-6 rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-8 px-12">
-          <h2 className="text-lg font-semibold text-richblack-5">Change Password</h2>
+        <div className="my-10 flex flex-col gap-y-6 rounded-md border-[1px] border-richblack-700 bg-[#161D29] p-8 px-12">
+          <h2 className="text-lg font-semibold text-[#F1F2FF]">Change Password</h2>
           <div className="flex flex-col gap-5 lg:flex-row">
             <div className="relative flex flex-col gap-2 lg:w-[48%]">
               <label htmlFor="oldPassword" className="lable-style">
@@ -44,7 +44,7 @@ export default function UpdatePassword() {
                 name="oldPassword"
                 id="oldPassword"
                 placeholder="Enter Current Password"
-                className="form-style text-white bg-richblack-700 p-2 pl-4 rounded-md"
+                className="form-style text-white bg-[#2C333F] p-2 pl-4 rounded-md"
                 {...register("oldPassword", { required: true })}
               />
               <span
@@ -72,7 +72,7 @@ export default function UpdatePassword() {
                 name="newPassword"
                 id="newPassword"
                 placeholder="Enter New Password"
-                className="form-style text-white bg-richblack-700 p-2 pl-4 rounded-md"
+                className="form-style text-white bg-[#2C333F] p-2 pl-4 rounded-md"
                 {...register("newPassword", { required: true })}
               />
               <span
@@ -98,7 +98,7 @@ export default function UpdatePassword() {
             onClick={() => {
               navigate("/dashboard/my-profile")
             }}
-            className="cursor-pointer rounded-md bg-richblack-700 py-2 px-5 font-semibold text-richblack-50"
+            className="cursor-pointer rounded-md bg-[#2C333F] py-2 px-5 font-semibold text-[#F1F2FF]0"
           >
             Cancel
           </button>

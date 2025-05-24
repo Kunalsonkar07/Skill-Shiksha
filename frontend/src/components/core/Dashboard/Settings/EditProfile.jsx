@@ -31,8 +31,8 @@ export default function EditProfile() {
     <>
       <form onSubmit={handleSubmit(submitProfileForm)}>
         {/* Profile Information */}
-        <div className="my-10 flex flex-col gap-y-6 rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-8 px-12">
-          <h2 className="text-lg font-semibold text-richblack-5">
+        <div className="my-10 flex flex-col gap-y-6 rounded-md border-[1px] border-richblack-700 bg-[#161D29] p-8 px-12">
+          <h2 className="text-lg font-semibold text-[#F1F2FF]">
             Profile Information
           </h2>
           <div className="flex flex-col gap-5 lg:flex-row">
@@ -45,7 +45,7 @@ export default function EditProfile() {
                 name="firstName"
                 id="firstName"
                 placeholder="Enter first name"
-                className="form-style text-white bg-richblack-700 p-2 pl-4 rounded-md"
+                className="form-style text-white bg-[#2C333F] p-2 pl-4 rounded-md"
                 {...register("firstName", { required: true })}
                 defaultValue={user?.firstName}
               />
@@ -64,7 +64,7 @@ export default function EditProfile() {
                 name="lastName"
                 id="lastName"
                 placeholder="Enter first name"
-                className="form-style text-white bg-richblack-700 p-2 pl-4 rounded-md"
+                className="form-style text-white bg-[#2C333F] p-2 pl-4 rounded-md"
                 {...register("lastName", { required: true })}
                 defaultValue={user?.lastName}
               />
@@ -85,7 +85,7 @@ export default function EditProfile() {
                 type="date"
                 name="dateOfBirth"
                 id="dateOfBirth"
-                className="form-style text-white bg-richblack-700 p-2 pl-4 rounded-md"
+                className="form-style text-white bg-[#2C333F] p-2 pl-4 rounded-md"
                 {...register("dateOfBirth", {
                   required: {
                     value: true,
@@ -112,7 +112,7 @@ export default function EditProfile() {
                 type="text"
                 name="gender"
                 id="gender"
-                className="form-style text-white bg-richblack-700 p-3 pl-4 rounded-md "
+                className="form-style text-white bg-[#2C333F] p-3 pl-4 rounded-md "
                 {...register("gender", { required: true })}
                 defaultValue={user?.additionalDetails?.gender}
               >
@@ -142,7 +142,7 @@ export default function EditProfile() {
                 name="contactNumber"
                 id="contactNumber"
                 placeholder="Enter Contact Number"
-                className="form-style text-white bg-richblack-700 p-2 pl-4 rounded-md"
+                className="form-style text-white bg-[#2C333F] p-2 pl-4 rounded-md"
                 {...register("contactNumber", {
                   required: {
                     value: true,
@@ -168,7 +168,7 @@ export default function EditProfile() {
                 name="about"
                 id="about"
                 placeholder="Enter Bio Details"
-                className="form-style text-white bg-richblack-700 p-2 pl-4 rounded-md"
+                className="form-style text-white bg-[#2C333F] p-2 pl-4 rounded-md"
                 {...register("about", { required: true })}
                 defaultValue={user?.additionalDetails?.about}
               />
@@ -186,7 +186,7 @@ export default function EditProfile() {
             onClick={() => {
               navigate("/dashboard/my-profile")
             }}
-            className="cursor-pointer rounded-md bg-richblack-700 py-2 px-5 font-semibold text-richblack-50"
+            className="cursor-pointer rounded-md bg-[#2C333F] py-2 px-5 font-semibold text-[#F1F2FF]0"
           >
             Cancel
           </button>

@@ -25,12 +25,12 @@ const MyProfile = () => {
         <h1 className='text-white font-bold text-2xl mb-11'>My Profile</h1>
 
         {/* section1 */}
-        <div className='flex bg-richblack-800 p-6 rounded-md items-center justify-between'>
+        <div className='flex bg-[#161D29] p-6 rounded-md items-center justify-between'>
             <div className='flex gap-3 items-center'>
                 <img src={user?.image} className='aspect-square rounded-full w-16 object-cover' alt='profile-pic'/>
                 <div className='flex flex-col'>
                     <h2 className='uppercase'>{user?.firstName} {user?.lastName}</h2>
-                    <p className='text-richblack-300'>{user?.email}</p>
+                    <p className='text-[#838894]'>{user?.email}</p>
                 </div>
             </div>
 
@@ -41,10 +41,10 @@ const MyProfile = () => {
         </div>
 
         {/* section2 */}
-        <div className='flex bg-richblack-800 p-6 rounded-md items-center justify-between'>
+        <div className='flex bg-[#161D29] p-6 rounded-md items-center justify-between'>
             <div className='flex flex-col gap-3'>
                 <h2>About</h2>
-                <p className='text-richblack-300'>
+                <p className='text-[#838894]'>
                     {
                         user.additionalDetail?.about ?? "Add about yourself"
                     }
@@ -58,43 +58,43 @@ const MyProfile = () => {
         </div>
 
         {/* section3 */}
-        <div className="flex bg-richblack-800 p-11 rounded-md items-center justify-between">
+        <div className="flex bg-[#161D29] p-11 rounded-md items-center justify-between">
           <div className="flex flex-col gap-y-5">
             <div>
-              <p className="mb-2 text-sm text-richblack-600">First Name</p>
-              <p className="text-sm font-medium text-richblack-5">
+              <p className="mb-2 text-sm text-[#424854]">First Name</p>
+              <p className="text-sm font-medium text-[#F1F2FF]">
                 {user?.firstName}
               </p>
             </div>
             <div>
-              <p className="mb-2 text-sm text-richblack-600">Email</p>
-              <p className="text-sm font-medium text-richblack-5">
+              <p className="mb-2 text-sm text-[#424854]">Email</p>
+              <p className="text-sm font-medium text-[#F1F2FF]">
                 {user?.email}
               </p>
             </div>
             <div>
-              <p className="mb-2 text-sm text-richblack-600">Gender</p>
-              <p className="text-sm font-medium text-richblack-5">
+              <p className="mb-2 text-sm text-[#424854]">Gender</p>
+              <p className="text-sm font-medium text-[#F1F2FF]">
                 {user?.additionalDetails?.gender ?? "Add Gender"}
               </p>
             </div>
           </div>
           <div className="flex flex-col gap-y-5">
             <div>
-              <p className="mb-2 text-sm text-richblack-600">Last Name</p>
-              <p className="text-sm font-medium text-richblack-5">
+              <p className="mb-2 text-sm text-[#424854]">Last Name</p>
+              <p className="text-sm font-medium text-[#F1F2FF]">
                 {user?.lastName}
               </p>
             </div>
             <div>
-              <p className="mb-2 text-sm text-richblack-600">Phone Number</p>
-              <p className="text-sm font-medium text-richblack-5">
+              <p className="mb-2 text-sm text-[#424854]">Phone Number</p>
+              <p className="text-sm font-medium text-[#F1F2FF]">
                 {user?.additionalDetails?.contactNumber ?? "Add Contact Number"}
               </p>
             </div>
             <div>
-              <p className="mb-2 text-sm text-richblack-600">Date Of Birth</p>
-              <p className="text-sm font-medium text-richblack-5">
+              <p className="mb-2 text-sm text-[#424854]">Date Of Birth</p>
+              <p className="text-sm font-medium text-[#F1F2FF]">
                 {formattedDate(user?.additionalDetails?.dateOfBirth) ??
                   "Add Date Of Birth"}
               </p>

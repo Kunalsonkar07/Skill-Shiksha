@@ -74,16 +74,16 @@ const Catalog = () => {
             </div>
           </div>
             <div className="mx-auto flex min-h-[260px] max-w-maxContentTab flex-col justify-center gap-4 lg:max-w-maxContent ">
-              <p className="text-sm text-richblack-900">
+              <p className="text-sm text-[#000814]">
                 {`Home / Catalog / `}
                 <span className="text-red-500">
                   {catalogPageData?.data?.selectedCategory?.name}
                 </span>
               </p>
-              <p className="text-3xl text-richblack-800">
+              <p className="text-3xl text-[#161D29]">
                 {catalogPageData?.data?.selectedCategory?.name}
               </p>
-              <p className="max-w-[870px] text-richblack-700">
+              <p className="max-w-[870px] text-[#424854]">
                 {catalogPageData?.data?.selectedCategory?.description}
               </p>
             </div>

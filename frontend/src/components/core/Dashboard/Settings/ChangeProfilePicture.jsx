@@ -41,7 +41,7 @@ const ChangeProfilePicture = () => {
   };
 
   return (
-    <div className="flex bg-richblack-800 p-6 rounded-md items-center justify-between">
+    <div className="flex bg-[#161D29] p-6 rounded-md items-center justify-between">
       <div className="flex gap-3 items-center">
         <img
           src={user?.image}
@@ -60,9 +60,9 @@ const ChangeProfilePicture = () => {
             />
             <button
               onClick={handleClick}
-              className={`cursor-pointer rounded-md bg-richblack-700 py-2 px-5 
+              className={`cursor-pointer rounded-md bg-[#2C333F] py-2 px-5 
                 ${loading?"opacity-25":"opacity-100"}
-                font-semibold text-richblack-50`}
+                font-semibold text-[#F1F2FF]0`}
             >
               Select
             </button>

@@ -177,7 +177,7 @@ const ContactUsForm = () => {
          ${
            !loading &&
            "transition-all duration-200 hover:scale-95 hover:shadow-none"
-         }  disabled:bg-richblack-500 sm:text-[16px] `}
+         }  disabled:bg-[#585D69] sm:text-[16px] `}
       >
         Send Message
       </button>

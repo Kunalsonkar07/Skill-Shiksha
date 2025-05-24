@@ -16,7 +16,7 @@ const InstructorSection = () => {
             <br/>
             <HighlightText text={"instructor"}/>
             </div> 
-            <p className='text-richblack-200 mt-3 mb-14 w-[80%]'>Instructors from around the world teach millions of students on StudyNotion. We provide the tools and skills to teach what you love.</p>
+            <p className='text-[#999DAA] mt-3 mb-14 w-[80%]'>Instructors from around the world teach millions of students on StudyNotion. We provide the tools and skills to teach what you love.</p>
             <Button active={true} linkto={"/signup"}>
                 <div className='flex items-center gap-2'>
                     Start Teaching Today

@@ -22,8 +22,8 @@ const Home = () => {
       <div className="relative mx-auto flex flex-col w-11/12 items-center text-white justify-between max-w-maxContent">
         {/* Become an Instructor Link */}
         <Link to={"/signup"}>
-          <div className="group mt-16 p-1 mx-auto font-bold rounded-full bg-richblack-800 text-richblack-200 transition-all duration-200 hover:scale-95 w-fit">
-            <div className="flex items-center gap-2 rounded-full transition-all duration-200 px-10 py-[5px] group-hover:bg-richblack-900">
+          <div className="group mt-16 p-1 mx-auto font-bold rounded-full bg-[#161D29] text-[#999DAA] transition-all duration-200 hover:scale-95 w-fit">
+            <div className="flex items-center gap-2 rounded-full transition-all duration-200 px-10 py-[5px] group-hover:bg-[#000814]">
               <p>Become an Instructor</p>
               <FaArrowRight />
             </div>
@@ -48,7 +48,7 @@ const Home = () => {
         {/* Additional sections like Code Blocks, Highlight Text, etc., can be included below */}
       </div>
 
-      <div className="relative mx-auto my-20 flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8 bg-richblack-900 text-white">
+      <div className="relative mx-auto my-20 flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8 bg-[#000814] text-white">
         {/* Reviws from Other Learner */}
         <h1 className="text-center text-4xl font-semibold mt-8">
           Reviews from other learners

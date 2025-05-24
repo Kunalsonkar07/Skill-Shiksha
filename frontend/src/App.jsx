@@ -51,7 +51,7 @@ function App() {
   // console.log("User from Redux:", user);
   return (
     <div
-      className="w-screen min-h-screen bg-richblack-900 flex flex-col font-inter"
+      className="w-screen min-h-screen bg-[#000814] flex flex-col font-inter"
       data-theme="autumn"
     >
       <Navbar />

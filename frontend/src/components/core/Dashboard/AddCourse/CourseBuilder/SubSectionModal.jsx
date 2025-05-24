@@ -108,14 +108,14 @@ const SubSectionModal = ({
       }
   return (
     <div className="fixed inset-0 z-[1000] !mt-0 grid h-screen w-screen place-items-center overflow-auto bg-white bg-opacity-10 backdrop-blur-sm">
-      <div className="my-10 w-11/12 max-w-[700px] rounded-lg border border-richblack-400 bg-richblack-800">
+      <div className="my-10 w-11/12 max-w-[700px] rounded-lg border border-richblack-400 bg-[#161D29]">
         {/* Modal Header */}
-        <div className="flex items-center justify-between rounded-t-lg bg-richblack-700 p-5">
-          <p className="text-xl font-semibold text-richblack-5">
+        <div className="flex items-center justify-between rounded-t-lg bg-[#2C333F] p-5">
+          <p className="text-xl font-semibold text-[#F1F2FF]">
             {view && "Viewing"} {add && "Adding"} {edit && "Editing"} Lecture
           </p>
           <button onClick={() => (!loading ? setModalData(null) : {})}>
-            <RxCross2 className="text-2xl text-richblack-5" />
+            <RxCross2 className="text-2xl text-[#F1F2FF]" />
           </button>
         </div>
         {/* Modal Form */}
@@ -136,7 +136,7 @@ const SubSectionModal = ({
           />
           {/* Lecture Title */}
           <div className="flex flex-col space-y-2">
-            <label className="text-sm text-richblack-5" htmlFor="lectureTitle">
+            <label className="text-sm text-[#F1F2FF]" htmlFor="lectureTitle">
               Lecture Title {!view && <sup className="text-pink-200">*</sup>}
             </label>
             <input
@@ -144,7 +144,7 @@ const SubSectionModal = ({
               id="lectureTitle"
               placeholder="Enter Lecture Title"
               {...register("lectureTitle", { required: true })}
-              className="form-style w-full text-white bg-richblack-700 rounded-md p-2"
+              className="form-style w-full text-white bg-[#2C333F] rounded-md p-2"
             />
             {errors.lectureTitle && (
               <span className="ml-2 text-xs tracking-wide text-pink-200">
@@ -154,7 +154,7 @@ const SubSectionModal = ({
           </div>
           {/* Lecture Description */}
           <div className="flex flex-col space-y-2">
-            <label className="text-sm text-richblack-5" htmlFor="lectureDesc">
+            <label className="text-sm text-[#F1F2FF]" htmlFor="lectureDesc">
               Lecture Description{" "}
               {!view && <sup className="text-pink-200">*</sup>}
             </label>
@@ -163,7 +163,7 @@ const SubSectionModal = ({
               id="lectureDesc"
               placeholder="Enter Lecture Description"
               {...register("lectureDesc", { required: true })}
-              className="form-style resize-x-none min-h-[130px] w-full text-white bg-richblack-700 rounded-md p-2"
+              className="form-style resize-x-none min-h-[130px] w-full text-white bg-[#2C333F] rounded-md p-2"
             />
             {errors.lectureDesc && (
               <span className="ml-2 text-xs tracking-wide text-pink-200">

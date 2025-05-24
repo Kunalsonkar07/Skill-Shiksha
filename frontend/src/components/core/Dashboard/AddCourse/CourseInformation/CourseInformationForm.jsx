@@ -157,18 +157,18 @@ export default function CourseInformationForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="space-y-8 rounded-md border-[1px] text-black border-richblack-700 bg-richblack-800 p-6"
+      className="space-y-8 rounded-md border-[1px] text-black border-richblack-700 bg-[#161D29] p-6"
     >
       {/* Course Title */}
       <div className="flex flex-col space-y-2">
-        <label className="text-sm text-richblack-5" htmlFor="courseTitle">
+        <label className="text-sm text-[#F1F2FF]" htmlFor="courseTitle">
           Course Title <sup className="text-pink-200">*</sup>
         </label>
         <input
           id="courseTitle"
           placeholder="Enter Course Title"
           {...register("courseTitle", { required: true })}
-          className="form-style w-full text-white bg-richblack-700 p-3 rounded-md border-b-2 border-white focus:border-2 outline-none"
+          className="form-style w-full text-white bg-[#2C333F] p-3 rounded-md border-b-2 border-white focus:border-2 outline-none"
         />
         {errors.courseTitle && (
           <span className="ml-2 text-xs tracking-wide text-pink-200">
@@ -178,14 +178,14 @@ export default function CourseInformationForm() {
       </div>
       {/* Course Short Description */}
       <div className="flex flex-col space-y-2">
-        <label className="text-sm text-richblack-5" htmlFor="courseShortDesc">
+        <label className="text-sm text-[#F1F2FF]" htmlFor="courseShortDesc">
           Course Short Description <sup className="text-pink-200">*</sup>
         </label>
         <textarea
           id="courseShortDesc"
           placeholder="Enter Description"
           {...register("courseShortDesc", { required: true })}
-          className="form-style resize-x-none min-h-[130px] w-full text-white bg-richblack-700 p-3 rounded-md border-b-2 border-white focus:border-2 outline-none"
+          className="form-style resize-x-none min-h-[130px] w-full text-white bg-[#2C333F] p-3 rounded-md border-b-2 border-white focus:border-2 outline-none"
         />
         {errors.courseShortDesc && (
           <span className="ml-2 text-xs tracking-wide text-pink-200">
@@ -196,7 +196,7 @@ export default function CourseInformationForm() {
 
       {/* Course Price */}
       <div className="flex flex-col space-y-2">
-        <label className="text-sm text-richblack-5" htmlFor="coursePrice">
+        <label className="text-sm text-[#F1F2FF]" htmlFor="coursePrice">
           Course Price <sup className="text-pink-200">*</sup>
         </label>
         <div className="relative">
@@ -210,9 +210,9 @@ export default function CourseInformationForm() {
                 value: /^(0|[1-9]\d*)(\.\d+)?$/,
               },
             })}
-            className="form-style w-full !pl-12 text-white bg-richblack-700 p-3 rounded-md border-b-2 border-white focus:border-2 outline-none"
+            className="form-style w-full !pl-12 text-white bg-[#2C333F] p-3 rounded-md border-b-2 border-white focus:border-2 outline-none"
           />
-          <HiOutlineCurrencyRupee className="absolute left-3 top-1/2 inline-block -translate-y-1/2 text-2xl text-richblack-400" />
+          <HiOutlineCurrencyRupee className="absolute left-3 top-1/2 inline-block -translate-y-1/2 text-2xl text-[#6E727F]" />
         </div>
         {errors.coursePrice && (
           <span className="ml-2 text-xs tracking-wide text-pink-200">
@@ -223,14 +223,14 @@ export default function CourseInformationForm() {
 
       {/* Course Category */}
       <div className="flex flex-col space-y-2">
-        <label className="text-sm text-richblack-5" htmlFor="courseCategory">
+        <label className="text-sm text-[#F1F2FF]" htmlFor="courseCategory">
           Course Category <sup className="text-pink-200">*</sup>
         </label>
         <select
           {...register("courseCategory", { required: true })}
           defaultValue=""
           id="courseCategory"
-          className="form-style w-full text-white bg-richblack-700 p-3 rounded-md border-b-2 border-white focus:border-2 outline-none"
+          className="form-style w-full text-white bg-[#2C333F] p-3 rounded-md border-b-2 border-white focus:border-2 outline-none"
         >
           <option value="" disabled>
             Choose a Category
@@ -272,14 +272,14 @@ export default function CourseInformationForm() {
 
       {/* Benefits of the course */}
       <div className="flex flex-col space-y-2">
-        <label className="text-sm text-richblack-5" htmlFor="courseBenefits">
+        <label className="text-sm text-[#F1F2FF]" htmlFor="courseBenefits">
           Benefits of the course <sup className="text-pink-200">*</sup>
         </label>
         <textarea
           id="courseBenefits"
           placeholder="Enter benefits of the course"
           {...register("courseBenefits", { required: true })}
-          className="form-style resize-x-none min-h-[130px] w-full text-white bg-richblack-700 p-3 rounded-md border-b-2 border-white focus:border-2 outline-none"
+          className="form-style resize-x-none min-h-[130px] w-full text-white bg-[#2C333F] p-3 rounded-md border-b-2 border-white focus:border-2 outline-none"
         />
         {errors.courseBenefits && (
           <span className="ml-2 text-xs tracking-wide text-pink-200">
@@ -302,7 +302,7 @@ export default function CourseInformationForm() {
           <button
             onClick={() => dispatch(setStep(2))}
             disabled={loading}
-            className={`flex cursor-pointer items-center gap-x-2 rounded-md bg-richblack-300 py-[8px] px-[20px] font-semibold text-richblack-900`}
+            className={`flex cursor-pointer items-center gap-x-2 rounded-md bg-[#838894] py-[8px] px-[20px] font-semibold text-[#000814]`}
           >
             Continue Wihout Saving
           </button>
