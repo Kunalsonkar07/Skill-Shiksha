@@ -53,8 +53,6 @@ function Navbar() {
       } transition-all duration-200`}
     >
 
-        <h1 className="text-caribbeangreen-300">Hello jee</h1>
-
       <div className="flex w-11/12 max-w-maxContent items-center justify-between">
         {/* Logo */}
         <Link to="/">
