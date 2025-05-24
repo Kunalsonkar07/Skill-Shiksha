@@ -6,7 +6,7 @@ import Spinner from "../../common/Spinner"
 import AuthImagePattern from "../../common/AuthImagePattern"
 import { WavyBackgroundDemo } from "../../aceternity/WavyBackgroundDemo"
 
-function Template({ title, description1, description2, image, formType }) {
+function Template({ title, description1, description2, formType }) {
   const { loading } = useSelector((state) => state.auth)
 
   return (
