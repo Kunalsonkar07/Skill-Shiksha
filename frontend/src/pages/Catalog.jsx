@@ -102,7 +102,9 @@ const Catalog = () => {
             <CardSection2/>
           </div>
 
-
+          <div>
+            
+          </div>
           <FeaturesSectionDemo/>
           
           <div className="h-[10px] w-full bg-black"></div>
