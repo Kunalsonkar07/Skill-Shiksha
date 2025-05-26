@@ -48,7 +48,7 @@ function Navbar() {
 
   return (
     <div
-      className={`z-50 flex h-14 items-center justify-center border-b-[1px] border-b-richblack-700 ${
+      className={`z-50 flex h-14 items-center justify-center ${
         location.pathname !== "/" ? "bg-[#161D29]" : ""
       } transition-all duration-200`}
     >
