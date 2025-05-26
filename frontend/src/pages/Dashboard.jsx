@@ -17,12 +17,12 @@ const Dashboard = () => {
     
 
   return (
-<div className={`relative flex`}>
-    <div className='w-[13rem] mx-auto  relative min-h-screen border-r-2 border-white bg-[#161D29]'>
+<div className={`relative flex h-full`}>
+    {/* <div className='w-[13rem] mx-auto  relative min-h-screen border-r-2 border-white bg-[#161D29] p-10'> */}
         <Sidebar />
-    </div>
+    {/* </div> */}
 
-    <div className={`text-white w-[calc(100%-13rem)]  `}>
+    <div className={`text-white w-full p-10 min-h-screen`}>
         <Outlet />
     </div>
 </div>

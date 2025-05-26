@@ -48,14 +48,14 @@ const Home = () => {
         {/* Additional sections like Code Blocks, Highlight Text, etc., can be included below */}
       </div>
 
-      <div className="relative mx-auto my-20 flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8 bg-[#000814] text-white">
-        {/* Reviws from Other Learner */}
+      {/* <div className="relative mx-auto my-20 flex w-9/12 max-w-maxContent flex-col items-center justify-between gap-8 bg-[#000814] text-white">
+        Reviws from Other Learner
         <h1 className="text-center text-4xl font-semibold mt-8">
           Reviews from other learners
         </h1>
-        {/* <ReviewSlider /> */}
         <ReviewSlider />
-      </div>
+        <ReviewSlider />
+      </div> */}
 
       {/* Footer Section */}
       <Footer />

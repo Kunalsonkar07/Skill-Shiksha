@@ -27,7 +27,7 @@ export default function EnrolledCourses() {
 
   return (
     <>
-      <div className="text-3xl text-[#F1F2FF]0 mt-6 ml-44 w-8/12 flex flex-col gap-8">Enrolled Courses</div>
+      <div className="text-3xl text-[#F1F2FF]0 mt-6 ml-4 w-8/12 flex flex-col gap-8 ">Enrolled Courses</div>
       {!enrolledCourses ? (
         <div className="grid min-h-[calc(100vh-3.5rem)] place-items-center">
           <div className="spinner"></div>

@@ -283,14 +283,22 @@ export default function Navbar() {
               <UserMenu />
             </div>
           ) : (
-            <div className="hidden items-center gap-x-2 font-rubik lg:flex">
+            <div className="hidden lg:flex items-center gap-4 font-rubik">
               <a
                 href="/login"
-                className="btn btn-primary !p-3 !rounded-btn h-auto w-full min-w-[140px] max-w-xs bg-primary"
+                className="btn btn-primary px-5 py-2 rounded h-auto bg-indigo-600 text-white hover:bg-indigo-700 transition-all"
               >
                 Login
               </a>
+
+              <a
+                href="/signup"
+                className="btn btn-outline-primary px-5 py-2 rounded h-auto border border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white transition-all"
+              >
+                Signup
+              </a>
             </div>
+
           )}
         </div>
 

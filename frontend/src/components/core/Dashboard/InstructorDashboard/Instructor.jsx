@@ -37,7 +37,7 @@ export default function Instructor() {
     )
   
     return (
-      <div>
+      <div className='ml-10'>
         <div className="space-y-2">
           <h1 className="text-2xl font-bold text-[#F1F2FF]">
             Hi {user?.firstName} 👋
@@ -63,7 +63,7 @@ export default function Instructor() {
                 </div>
               )}
               {/* Total Statistics */}
-              <div className="flex min-w-[250px] flex-col rounded-md bg-[#161D29] p-6">
+              <div className="flex min-w-[280px] flex-col rounded-md bg-[#161D29] p-6">
                 <p className="text-lg font-bold text-[#F1F2FF]">Statistics</p>
                 <div className="mt-4 space-y-4">
                   <div>

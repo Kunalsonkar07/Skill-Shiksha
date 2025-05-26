@@ -43,7 +43,7 @@ const Sidebar = () => {
 
   return (
     <>
-    <div className={`flex h-[calc(100vh-3.5rem)] min-w-[220px] flex-col border-r-[1px] border-r-richblack-700 bg-[#161D29] py-10`}>
+    <div className={`flex min-w-[260px] flex-col bg-[#161D29] py-10 px-10`}>
         <div className="flex flex-col gap-4">
           {sidebarLinks.map((link) => {
             if (link.type && user?.accountType !== link.type) return null
@@ -55,12 +55,12 @@ const Sidebar = () => {
 
         <div className="mx-auto mt-6 mb-6 h-[1px] w-10/12 bg-[#2C333F]" />
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-4">
             <SidebarLink link={{ name: "Settings", path: "/dashboard/settings" }}
             iconName="VscSettingsGear"/>
 
             <button onClick={ ()=> setConfirmationModal(true)}>
-                <div className='flex pl-3 items-center gap-2 text-[#F1F2FF]'>
+                <div className='flex pl-4 items-center gap-2 text-[#F1F2FF] cursor-pointer'>
                     <VscSignOut/>
                     <span >Logout</span>
                 </div>
