@@ -26,7 +26,11 @@ export default function MyCourses() {
   return (
     <div className='text-white mt-6 ml-20 w-8/12 flex flex-col gap-8'>
       <div className="mb-14 flex items-center justify-between">
-        <h1 className='text-white font-bold text-2xl mb-11'>My Courses</h1>
+        <div className="section_heading text-5xl font-bold text-[#7b8fd9] inline-block relative">
+          My Courses
+          <span className="absolute left-0 -bottom-1 w-full h-2 bg-[#7b8fd9] blur-sm opacity-60"></span>
+      </div>
+        
         <IconBtn
           text="Add Course"
           onclick={() => navigate("/dashboard/add-course")}
