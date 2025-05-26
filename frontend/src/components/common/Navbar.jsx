@@ -1,148 +1,307 @@
-import { useEffect, useState } from "react"
-import { AiOutlineMenu, AiOutlineShoppingCart } from "react-icons/ai"
-import { BsChevronDown } from "react-icons/bs"
-import { useSelector } from "react-redux"
-import { Link, matchPath, useLocation } from "react-router-dom"
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom"
 
-import logo from "../../assets/Logo/Logo-Full-Light.png"
-import { NavbarLinks } from "../../data/navbar-links"
-import { apiConnector } from "../../services/apiconnector"
-import { categories } from "../../services/apis"
-import PDropdown from "../core/Auth/PDropdown"
+import { logout } from "../../services/operations/authAPI"
 
-function Navbar() {
-  const { token } = useSelector((state) => state.auth)
-  const { user } = useSelector((state) => state.profile)
-  const { totalItems } = useSelector((state) => state.cart)
-  const location = useLocation()
+export default function Navbar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const [subLinks, setSubLinks] = useState([])
-  const [loading, setLoading] = useState(false)
-
-
-  const fetchCategories = async () => {
-    setLoading(true)
-    try {
-      const res = await apiConnector("GET", categories.CATEGORIES_API)
-      console.log("Printing subLinks: ", res)
-      setSubLinks(res.data.data)
-    } catch (error) {
-      console.error(
-        "Could not fetch Categories.",
-        error.response ? error.response.data : error.message
-      )
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  useEffect(() => {
-    fetchCategories()
-  }, [])
-
-  console.log("sub links", subLinks)
-
-  const matchRoute = (route) => {
-    return matchPath({ path: route }, location.pathname)
-  }
+  const { user } = useSelector((state) => state.profile);
 
   return (
     <div
-      className={`z-50 flex h-14 items-center justify-center border-b-[1px] border-b-richblack-700 ${
-        location.pathname !== "/" ? "bg-[#161D29]" : ""
-      } transition-all duration-200`}
+      className="relative z-50 flex items-center justify-center py-4 transition-all duration-300"
+      style={{ boxShadow: "rgba(234, 235, 244, 0.95) 0px 4px 10px" }}
     >
+      <nav className="flex h-[45px] w-[95%] max-w-maxScreen justify-between">
+        <a
+          className="flex justify-center items-center gap-x-3"
+          href="/"
+          aria-label="CodeHelp Logo"
+        >
+          <div>SkillSkishka</div>
+        </a>
 
-      <div className="flex w-11/12 max-w-maxContent items-center justify-between">
-        {/* Logo */}
-        <Link to="/">
-          <img src={logo} alt="Logo" width={160} height={32} loading="lazy" />
-        </Link>
-        {/* Navigation links */}
-        <nav className="hidden md:block">
-          <ul className="flex gap-x-6 text-[#DBDDEA]">
-            {NavbarLinks.map((link, index) => (
-              <li key={index}>
-                {link.title === "Catalog" ? (
-                  <>
-                    <div
-                      className={`group relative flex cursor-pointer items-center gap-1 ${
-                        matchRoute("/catalog/:catalogName")
-                          ? "text-yellow-25"
-                          : "text-[#DBDDEA]"
-                      }`}
-                    >
-                      <p>{link.title}</p>
-                      <BsChevronDown />
-                      <div className="invisible absolute left-[50%] top-[50%] z-[1000] flex w-[200px] translate-x-[-50%] translate-y-[3em] flex-col rounded-lg bg-[#F1F2FF] p-4 text-[#000814] opacity-0 transition-all duration-150 group-hover:visible group-hover:translate-y-[1.65em] group-hover:opacity-100 lg:w-[300px]">
-                        <div className="absolute left-[50%] top-0 -z-10 h-6 w-6 translate-x-[80%] translate-y-[-40%] rotate-45 select-none rounded bg-[#F1F2FF]"></div>
-                          {
-                            loading?(<div className="text-black">Loading....</div>):(
-                            <div>
-                              {subLinks && subLinks.map((subLink, index) => (
-                                <Link key={index} to={`/catalog/${subLink.name
-                                    .split(" ")
-                                    .join("-")
-                                    .toLowerCase()}`}>
-                                  <p className="font-semibold text-black">{subLink.name}</p>
-                                </Link>
-                              ))}
-                            </div>)
-                          }
-                      </div>
-                    </div>
-                  </>
-                ) : (
-                  <Link to={link?.path}>
-                    <p
-                      className={`${
-                        matchRoute(link?.path)
-                          ? "text-yellow-25"
-                          : "text-[#DBDDEA]"
-                      }`}
-                    >
-                      {link.title}
-                    </p>
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
-        </nav>
-        {/* Login / Signup / Dashboard */}
-        <div className="hidden items-center gap-x-4 md:flex">
-          {user && user?.accountType !== "Instructor" && (
-            <Link to="/dashboard/cart" className="relative">
-              <AiOutlineShoppingCart className="text-2xl text-[#AFB2BF]" />
-              {totalItems > 0 && (
-                <span className="absolute -bottom-2 -right-2 grid h-5 w-5 place-items-center overflow-hidden rounded-full bg-[#424854] text-center text-xs font-bold text-yellow-100">
-                  {totalItems}
+        <ul className="hidden items-center gap-x-6 lg:flex text-neutral-9 dark:text-neutral-2">
+          <li>
+            <a href="/">
+              <div className="py-5 text-base leading-5 relative group flex gap-1 items-center hover:text-[#6674CC] transition-all duration-150 font-semibold ">
+                <span>Home</span>
+                <span className="hidden">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 22 22"
+                    className="w-6 h-6 group-hover:fill-indigo-600 fill-indigo-600"
+                  >
+                    <path d="M11 14.667a.92.92 0 0 1-.587-.21l-5.5-4.584A.918.918 0 1 1 6.086 8.46l4.913 4.107 4.914-3.96a.917.917 0 0 1 1.292.137.917.917 0 0 1-.128 1.339l-5.5 4.427a.92.92 0 0 1-.578.156"></path>
+                  </svg>
                 </span>
-              )}
-            </Link>
-          )}
-          {token === null && (
-            <Link to="/login">
-              <button className="rounded-[8px] border border-richblack-700 bg-[#161D29] px-[12px] py-[8px] text-[#AFB2BF]">
-                Log in
-              </button>
-            </Link>
-          )}
-          {token === null && (
-            <Link to="/signup">
-              <button className="rounded-[8px] border border-richblack-700 bg-[#161D29] px-[12px] py-[8px] text-[#AFB2BF]">
-                Sign up
-              </button>
-            </Link>
-          )}
-          {token !== null && <PDropdown />}
-        </div>
-        <button className="mr-4 md:hidden">
-          <AiOutlineMenu fontSize={24} fill="#AFB2BF" />
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="/catalog/python">
+              <div className="py-5 text-base leading-5 relative group flex gap-1 items-center hover:text-[#6674CC] transition-all duration-150 font-normal">
+                <span>Courses</span>
+                <span className="hidden">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 22 22"
+                    className="w-6 h-6 group-hover:fill-indigo-600 fill-neutral-9 dark:fill-neutral-2"
+                  >
+                    <path d="M11 14.667a.92.92 0 0 1-.587-.21l-5.5-4.584A.918.918 0 1 1 6.086 8.46l4.913 4.107 4.914-3.96a.917.917 0 0 1 1.292.137.917.917 0 0 1-.128 1.339l-5.5 4.427a.92.92 0 0 1-.578.156"></path>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="/contact">
+              <div className="py-5 text-base leading-5 relative group flex gap-1 items-center hover:text-[#6674CC] transition-all duration-150 font-normal">
+                <span>Contact</span>
+                <span className="hidden">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 22 22"
+                    className="w-6 h-6 group-hover:fill-indigo-600 fill-neutral-9 dark:fill-neutral-2"
+                  >
+                    <path d="M11 14.667a.92.92 0 0 1-.587-.21l-5.5-4.584A.918.918 0 1 1 6.086 8.46l4.913 4.107 4.914-3.96a.917.917 0 0 1 1.292.137.917.917 0 0 1-.128 1.339l-5.5 4.427a.92.92 0 0 1-.578.156"></path>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="/about">
+              <div className="py-5 text-base leading-5 relative group flex gap-1 items-center hover:text-[#6674CC] transition-all duration-150 font-normal">
+                <span>AboutUs</span>
+                <span className="hidden">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 22 22"
+                    className="w-6 h-6 group-hover:fill-indigo-600 fill-neutral-9 dark:fill-neutral-2"
+                  >
+                    <path d="M11 14.667a.92.92 0 0 1-.587-.21l-5.5-4.584A.918.918 0 1 1 6.086 8.46l4.913 4.107 4.914-3.96a.917.917 0 0 1 1.292.137.917.917 0 0 1-.128 1.339l-5.5 4.427a.92.92 0 0 1-.578.156"></path>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="/chat">
+              <div className="py-5 text-base leading-5 relative group flex gap-1 items-center hover:text-[#6674CC] transition-all duration-150 font-normal">
+                <span>Chat</span>
+                <span className="hidden">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 22 22"
+                    className="w-6 h-6 group-hover:fill-indigo-600 fill-neutral-9 dark:fill-neutral-2"
+                  >
+                    <path d="M11 14.667a.92.92 0 0 1-.587-.21l-5.5-4.584A.918.918 0 1 1 6.086 8.46l4.913 4.107 4.914-3.96a.917.917 0 0 1 1.292.137.917.917 0 0 1-.128 1.339l-5.5 4.427a.92.92 0 0 1-.578.156"></path>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </li>
+        </ul>
+
+        
+
+          {/* Mobile menu button */}
+        <button
+          className="block lg:hidden"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle mobile menu"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6 text-gray-700 dark:text-neutral-2"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            {mobileMenuOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
+          </svg>
         </button>
-      </div>
+
+        {/* Mobile menu */}
+        {mobileMenuOpen && (
+          <div className="absolute top-full left-0 w-full bg-neutral-2 dark:bg-neutral-9 text-neutral-9 dark:text-neutral-2 shadow-lg lg:hidden z-50">
+            <ul className="flex flex-col gap-3 p-4">
+              <li>
+                <a href="/" className="block py-2 px-4 hover:bg-indigo-600 hover:text-white rounded">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="/#courses" className="block py-2 px-4 hover:bg-indigo-600 hover:text-white rounded">
+                  Courses
+                </a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="/dashboard/quick-compiler"
+                  className="block py-2 px-4 hover:bg-indigo-600 hover:text-white rounded"
+                >
+                  Explore
+                </a>
+              </li>
+              <li>
+                <a href="/contact" className="block py-2 px-4 hover:bg-indigo-600 hover:text-white rounded">
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a href="/dashboard/articles" className="block py-2 px-4 hover:bg-indigo-600 hover:text-white rounded">
+                  Articles
+                </a>
+              </li>
+             
+              <li>
+                <div>
+                  {
+                    user ? (<div></div>) : (
+                      <a
+                  href="/login"
+                  className="block py-2 sm:w-[30%] w-[50%] px-4 text-center bg-indigo-600 text-white rounded hover:bg-indigo-700 transition-all"
+                >
+                  Login
+                </a>
+                    )
+                  }
+                </div>
+                
+              </li>
+
+            </ul>
+          </div>
+        )}
+
+<div>
+          {user ? (
+              <div>
+              {/* User menu dropdown */}
+              <UserMenu />
+            </div>
+          ) : (
+            <div className="hidden items-center gap-x-2 font-rubik lg:flex">
+              <a
+                href="/login"
+                className="btn btn-primary !p-3 !rounded-btn h-auto w-full min-w-[140px] max-w-xs bg-primary"
+              >
+                Login
+              </a>
+            </div>
+          )}
+        </div>
+
+      </nav>
     </div>
-  )
+  );
 }
 
-export default Navbar
+function UserMenu() {
+  const [dropdownOpen, setDropdownOpen] = React.useState(false);
+  const dropdownRef = React.useRef(null);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate() ;
+
+  const { user } = useSelector((state) => state.profile);
+
+  React.useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  return (
+    <div className="relative" ref={dropdownRef}>
+      <button
+        type="button"
+        onClick={() => setDropdownOpen((open) => !open)}
+        className="flex items-center gap-x-1"
+      >
+        <img
+          alt="Profile Pic"
+          loading="lazy"
+          width="40"
+          height="40"
+          decoding="async"
+          className="rounded-full object-cover w-10 h-10"
+          src={user?.profilePicture || "https://www.gravatar.com/avatar/" + user?._id + "?d=mp&f=y"}
+          style={{ color: "transparent" }}
+        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className={`lucide lucide-chevron-down w-6 h-6 stroke-2 mt-3 transition-transform ${
+            dropdownOpen ? "rotate-180" : "rotate-0"
+          } stroke-neutral-10 dark:stroke-neutral-2`}
+        >
+          <path d="m6 9 6 6 6-6"></path>
+        </svg>
+      </button>
+
+      {dropdownOpen && (
+        <div className="absolute right-0 mt-12 w-48 rounded-md bg-neutral-900 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
+        <ul className="py-1 text-sm text-white">
+          <li>
+            <a
+              href="/dashboard/cart"
+              className="block px-4 py-2 hover:bg-indigo-600 hover:text-white transition-colors"
+            >
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <div
+              onClick={() => {
+                dispatch(logout(navigate))
+                setOpen(false)
+              }}
+              className="block px-4 py-2 hover:bg-indigo-600 hover:text-white transition-colors"
+            >
+              Logout
+            </div>
+          </li>
+        </ul>
+      </div>
+      
+      
+      )}
+    </div>
+  );
+}

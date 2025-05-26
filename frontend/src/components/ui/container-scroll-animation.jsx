@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
-import { useScroll, useTransform, motion } from "motion/react";
+import { useScroll, useTransform, motion } from "framer-motion";
 
 export const ContainerScroll = ({ titleComponent, children }) => {
   const containerRef = useRef(null);
