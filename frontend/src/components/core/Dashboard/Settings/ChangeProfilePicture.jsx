@@ -41,7 +41,7 @@ const ChangeProfilePicture = () => {
   };
 
   return (
-    <div className="flex bg-[#161D29] p-6 rounded-md items-center justify-between">
+    <div className="flex bg-[#161D29] p-6 rounded-md items-center justify-between border">
       <div className="flex gap-3 items-center">
         <img
           src={user?.image}
@@ -67,7 +67,7 @@ const ChangeProfilePicture = () => {
               Select
             </button>
             <button
-              className="cursor-pointer rounded-md bg-yellow-50 py-2 px-5 font-semibold text-black"
+              className="cursor-pointer rounded-md bg-yellow-300 py-2 px-5 font-semibold text-black"
               onClick={submitHandler}
             >
               {loading?"Uploading...":"Upload"}

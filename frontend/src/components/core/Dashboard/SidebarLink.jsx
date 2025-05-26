@@ -15,14 +15,14 @@ const SidebarLink = ({link,iconName}) => {
   return (
     <NavLink
     to={link.path}
-    className={`relative ${matchRoute(link.path)?"bg-yellow-800 text-yellow-50":"bg-opacity-0 text-[#838894]"}`}
+    className={`p-1 rounded-lg relative ${matchRoute(link.path)?"bg-[#02010a] text-yellow-50 border":"bg-opacity-0 text-[#838894]"} hover:bg-[#02010a] hover:text-yellow-50 transition-colors duration-200`}
     >
 
-        <span
+        {/* <span
             className={`absolute left-0 top-0 h-full w-[0.15rem] bg-yellow-50 ${
             matchRoute(link.path) ? "opacity-100" : "opacity-0"
             }`}
-        ></span>
+        ></span> */}
 
         <div className='flex gap-2 items-center pl-3 pt-3 pb-3'>
             <Icon/>

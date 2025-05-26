@@ -21,11 +21,11 @@ const MyProfile = () => {
     }
 
   return (
-    <div className='text-white mt-6 ml-44 w-8/12 flex flex-col gap-8'>
+    <div className='text-white mt-6 ml-34 w-8/12 flex flex-col gap-8'>
         <h1 className='text-white font-bold text-2xl mb-11'>My Profile</h1>
 
         {/* section1 */}
-        <div className='flex bg-[#161D29] p-6 rounded-md items-center justify-between'>
+        <div className='flex bg-[#161D29] p-6 rounded-md items-center justify-between border'>
             <div className='flex gap-3 items-center'>
                 <img src={user?.image} className='aspect-square rounded-full w-16 object-cover' alt='profile-pic'/>
                 <div className='flex flex-col'>
@@ -34,14 +34,14 @@ const MyProfile = () => {
                 </div>
             </div>
 
-            <button onClick={clickHandler} className='bg-yellow-200 text-black p-1 px-2 rounded-sm flex items-center gap-2'>
+            <button onClick={clickHandler} className='bg-yellow-300 text-black p-1 px-2 rounded-sm flex items-center gap-2'>
                 <span>Edit</span>
                 <RiEditBoxLine/>
             </button>
         </div>
 
         {/* section2 */}
-        <div className='flex bg-[#161D29] p-6 rounded-md items-center justify-between'>
+        <div className='flex bg-[#161D29] p-6 rounded-md items-center justify-between border'>
             <div className='flex flex-col gap-3'>
                 <h2>About</h2>
                 <p className='text-[#838894]'>
@@ -51,14 +51,14 @@ const MyProfile = () => {
                 </p>
             </div>
 
-            <button onClick={clickHandler} className='bg-yellow-200 text-black p-1 px-2 rounded-sm flex items-center gap-2'>
+            <button onClick={clickHandler} className='bg-yellow-300 text-black p-1 px-2 rounded-sm flex items-center gap-2'>
                 <span>Edit</span>
                 <RiEditBoxLine/>
             </button>
         </div>
 
         {/* section3 */}
-        <div className="flex bg-[#161D29] p-11 rounded-md items-center justify-between">
+        <div className="flex bg-[#161D29] p-11 rounded-md items-center justify-between border">
           <div className="flex flex-col gap-y-5">
             <div>
               <p className="mb-2 text-sm text-[#424854]">First Name</p>
@@ -100,7 +100,7 @@ const MyProfile = () => {
               </p>
             </div>
           </div>
-          <button onClick={clickHandler} className='bg-yellow-200 text-black p-1 px-2 rounded-sm flex items-center gap-2'>
+          <button onClick={clickHandler} className='bg-yellow-300 text-black p-1 px-2 rounded-sm flex items-center gap-2'>
                 <span>Edit</span>
                 <RiEditBoxLine/>
             </button>

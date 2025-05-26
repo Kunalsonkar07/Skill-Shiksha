@@ -9,7 +9,7 @@ export default function RenderCartCourses() {
   const { cart } = useSelector((state) => state.cart)
   const dispatch = useDispatch()
   return (
-    <div className="flex flex-1 flex-col">
+    <div className="flex flex-1 flex-col w-full">
       {cart.map((course, indx) => (
         <div
           key={course._id}
@@ -50,7 +50,7 @@ export default function RenderCartCourses() {
           <div className="flex flex-col items-end space-y-2">
             <button
               onClick={() => dispatch(removeFromCart(course._id))}
-              className="flex items-center gap-x-1 rounded-md border border-richblack-600 bg-[#2C333F] py-3 px-[12px] text-pink-200"
+              className="flex items-center gap-x-1 rounded-md border border-richblack-600 bg-[#2C333F] py-2 px-[12px] text-pink-200"
             >
               <RiDeleteBin6Line />
               <span>Remove</span>
