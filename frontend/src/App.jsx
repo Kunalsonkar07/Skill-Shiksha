@@ -60,7 +60,7 @@ function App() {
         {/* <Route path="catalog/:catalogName" element={<Catalog/>} />
       <Route path="courses/:courseId" element={<CourseDetails/>} /> */}
 
-        <Route path="catalog/:catalogName" element={<Catalog />} />
+        <Route path="course/:catalogName" element={<Catalog />} />
         <Route path="courses/:courseId" element={<CourseDetails />} />
 
         <Route
