@@ -28,7 +28,7 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
   }
 
   const handleAddToCart = () => {
-    if (user && user?.accountType === ACCOUNT_TYPE.INSTRUCTOR) {
+    if (user ) {
       toast.error("You are an Instructor. You can't buy a course.")
       return
     }
