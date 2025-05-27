@@ -67,7 +67,7 @@ const ChangeProfilePicture = () => {
               Select
             </button>
             <button
-              className="cursor-pointer rounded-md bg-yellow-300 py-2 px-5 font-semibold text-black"
+              className="cursor-pointer rounded-md bg-indigo-600 text-white py-2 px-5 font-semibold"
               onClick={submitHandler}
             >
               {loading?"Uploading...":"Upload"}

@@ -98,7 +98,7 @@ export default function UpdatePassword() {
             onClick={() => {
               navigate("/dashboard/my-profile")
             }}
-            className="cursor-pointer rounded-md bg-[#2C333F] py-2 px-5 font-semibold text-[#F1F2FF]0"
+            className="cursor-pointer rounded-md bg-red-600 py-2 px-5 font-semibold text-[#F1F2FF]0"
           >
             Cancel
           </button>

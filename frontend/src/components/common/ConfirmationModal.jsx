@@ -1,27 +1,29 @@
 import React from 'react'
+import IconBtn from "./IconBtn"
 
-const ConfirmationModal = ({text1,text2,btn1Text,btn2Text,btn1Handler,btn2Handler}) => {
+export default function ConfirmationModal({ modalData }) {
   return (
     <div className="fixed inset-0 z-[1000] !mt-0 grid place-items-center overflow-auto bg-opacity-10 backdrop-blur-sm">
-      <div className="w-11/12 max-w-[350px] rounded-lg border border-richblack-400 bg-[#161D29] p-6 flex flex-col gap-4">
-        <h2 className='font-bold text-xl text-white'>{text1}</h2>
-        <p className='font-semibold text-[#F1F2FF]0'>{text2}</p>
-        <div className='flex justify-between text-xl mt-4'>
-            <button onClick={btn1Handler} className='bg-yellow-300 cursor-pointer text-black p-1 px-2 rounded-sm 
-            flex items-center gap-2
-            transition-all duration-200 hover:scale-95
-            '>
-                {btn1Text}
-            </button>
-            <button onClick={btn2Handler} className='bg-[#F1F2FF] cursor-pointer text-black 
-            transition-all duration-200 hover:scale-95
-            p-1 px-2 rounded-sm flex items-center gap-2'>
-                {btn2Text}
-            </button>
+      <div className="w-11/12 max-w-[350px] rounded-lg border border-[#6E727F] bg-[#161D29] p-6">
+        <p className="text-2xl font-semibold text-[#F1F2FF]">
+          {modalData?.text1}
+        </p>
+        <p className="mt-3 mb-5 leading-6 text-[#999DAA]">
+          {modalData?.text2}
+        </p>
+        <div className="flex items-center gap-x-4">
+          <IconBtn
+            onclick={modalData?.btn1Handler}
+            text={modalData?.btn1Text}
+          />
+          <button
+            className="cursor-pointer rounded-md bg-[#999DAA] py-[8px] px-[20px] font-semibold text-[#000814]"
+            onClick={modalData?.btn2Handler}
+          >
+            {modalData?.btn2Text}
+          </button>
         </div>
-        </div>
+      </div>
     </div>
   )
 }
-
-export default ConfirmationModal
