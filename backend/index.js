@@ -26,7 +26,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // Frontend URL
+    origin: "*", // Frontend URL
     credentials: true, // Yeh compulsory hai cookie bhejne ke liye
   })
 );
