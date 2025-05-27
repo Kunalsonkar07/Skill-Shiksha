@@ -44,13 +44,13 @@ function ForgotPassword() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter email address"
-                  className="form-style  w-full p-2 text-richblack"
+                  className="form-style  w-full p-2 text-richblack ouline-none border border-white"
                 />
               </label>
             )}
             <button
               type="submit"
-              className="mt-6 w-full rounded-[8px] bg-yellow-50 py-[12px] px-[12px] font-medium text-[#000814]"
+              className="mt-6 w-full rounded-[8px] bg-indigo-600  py-[12px] px-[12px] font-medium text-white"
             >
               {!emailSent ? "Sumbit" : "Resend Email"}
             </button>
