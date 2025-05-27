@@ -14,7 +14,7 @@ const Sidebar = () => {
     const { user, loading: profileLoading } = useSelector(
         (state) => state.profile
       )
-      const [confirmationModal, setConfirmationModal] = useState(false);
+      const [confirmationModal, setConfirmationModal] = useState(null);
       const { loading: authLoading } = useSelector((state) => state.auth)
 
 
@@ -59,7 +59,16 @@ const Sidebar = () => {
             <SidebarLink link={{ name: "Settings", path: "/dashboard/settings" }}
             iconName="VscSettingsGear"/>
 
-            <button onClick={ ()=> setConfirmationModal(true)}>
+            <button onClick={() =>
+              setConfirmationModal({
+                text1: "Are you sure?",
+                text2: "You will be logged out of your account.",
+                btn1Text: "Logout",
+                btn2Text: "Cancel",
+                btn1Handler: () => dispatch(logout(navigate)),
+                btn2Handler: () => setConfirmationModal(null),
+              })
+            }>
                 <div className='flex pl-4 items-center gap-2 text-[#F1F2FF] cursor-pointer'>
                     <VscSignOut/>
                     <span >Logout</span>
@@ -70,17 +79,7 @@ const Sidebar = () => {
 
         <div className='absolute top-[25%] left-[250%]'>  
 
-        {
-            confirmationModal && (<ConfirmationModal text1= "Are you sure?"
-                text2= "You will be logged out of your account."
-                btn1Text= "Logout"
-                btn2Text= "Cancel"
-                btn1Handler= { ()=>{dispatch(logout(navigate))}}
-                btn2Handler={()=>{
-                  CancelHandler()
-                }}
-            />)
-        }
+        {confirmationModal && <ConfirmationModal modalData={confirmationModal} />}
         </div>
     </>
   )

@@ -24,10 +24,22 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+const allowedOrigins = [
+  "http://localhost:3000",
+  "http://localhost:5173"
+];
+
 app.use(
   cors({
-    origin: "*", // Frontend URL
-    credentials: true, // Yeh compulsory hai cookie bhejne ke liye
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like from Postman or curl)
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
   })
 );
 
