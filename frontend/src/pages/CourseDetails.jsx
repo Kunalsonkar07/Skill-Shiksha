@@ -259,7 +259,7 @@ function CourseDetails() {
               height={180}
               decoding="async"
               className="md:max-w-full w-[400px] min-h-[180px] rounded-2xl overflow-hidden object-cover"
-              src="https://dgyugonj9a9mu.cloudfront.net/6610ef3fc32f6201821ac503_scaled_cover_0d24eb5b35.jpg"
+              src={thumbnail}
             />
             <div className="flex flex-col gap-y-4 mt-4">
               <div className="flex text-3xl gap-x-3 font-semibold flex-wrap items-center">
