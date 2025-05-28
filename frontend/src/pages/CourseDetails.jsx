@@ -258,7 +258,7 @@ function CourseDetails() {
               width={400}
               height={180}
               decoding="async"
-              className="md:max-w-full w-[400px] min-h-[180px] rounded-2xl overflow-hidden object-cover"
+              className="md:max-w-full w-[400px] max-h-[180px] rounded-2xl overflow-hidden object-cover"
               src={thumbnail}
             />
             <div className="flex flex-col gap-y-4 mt-4">
@@ -274,7 +274,6 @@ function CourseDetails() {
                     "10+ hours Video Content",
                     "450+ Curated Questions  (asked to mentors)",
                     "MEGA Problem-Solving lectures",
-                    "Interview Preparation",
                     "with Doubt Assistance",
                     "with Course Completion Certificate"
                   ].map((item, idx) => (
