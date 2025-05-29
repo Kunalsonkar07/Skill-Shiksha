@@ -104,6 +104,9 @@ exports.verifyPayment = async (req, res) => {
 
   const userId = req.query?.userid
   console.log(req.query) ;
+  const courseIds = courseid.split(',');
+  console.log(courseIds); 
+
 
   if (
     !razorpay_order_id ||
@@ -123,10 +126,17 @@ exports.verifyPayment = async (req, res) => {
     .digest("hex")
 
   if (expectedSignature === razorpay_signature) {
+    for (const courseid of courseIds) {
     await enrollStudents(courseid, userId ) ;
+  }
     // return res.redirect ( `http://localhost:5173/paymentSuccess?reference=${razorpay_payment_id}`) ;
     // enrollStudents( )
-    return res.redirect ( `http://localhost:5173/courses/${courseid}?paymentSuccess=true&reference=${razorpay_payment_id}`) ;
+
+    if ( courseIds.length > 1 ) {
+      return res.redirect ( `http://localhost:5173/courses/${courseIds[0]}?paymentSuccess=true&reference=${razorpay_payment_id}&multipleCourses=true`) ;
+    }
+
+    return res.redirect ( `http://localhost:5173/courses/${courseIds[0]}?paymentSuccess=true&reference=${razorpay_payment_id}`) ;
     // return res.status(200).json({ success: true, message: "Payment Verified" })
   }
 

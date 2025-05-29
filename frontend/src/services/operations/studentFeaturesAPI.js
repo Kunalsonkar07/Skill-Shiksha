@@ -41,11 +41,19 @@ export async function buyCourse(token, courses, userDetails, navigate, dispatch)
     }
 
     try{
-        const res = await fetchCourseDetails( courses ) ;
-        console.log(res) ;
-        console.log(res.data?.courseDetails?.price) ;
+
+        let Amount = 0 ;
+
+        for (const course of courses) { 
+            const res = await fetchCourseDetails( course ) ;
+            console.log(res) ;
+            console.log(res.data?.courseDetails?.price) ;
+            Amount += res.data?.courseDetails?.price ;
+        }
         console.log( COURSE_PAYMENT_API ) ;
         console.log(userDetails) ;
+        console.log(Amount);
+        // return ;
 
         // const data = await axios.post( "http://localhost:4000/api/v1/payment/razorpay/process" , {
         //     amount : res.data?.courseDetails?.price ,
@@ -55,7 +63,7 @@ export async function buyCourse(token, courses, userDetails, navigate, dispatch)
             "POST",
             COURSE_PAYMENT_API,
             {
-              amount: res.data?.courseDetails?.price,
+              amount: Amount ,
             },
             {
               Authorization: `Bearer ${token}`,
@@ -71,12 +79,10 @@ export async function buyCourse(token, courses, userDetails, navigate, dispatch)
         const order = orderdata?.data?.order ;
         console.log(order) ;
 
-          const amount = res.data?.courseDetails?.price ;
-
       // Open Razorpay Checkout
       const options = {
         key , // Replace with your Razorpay key_id
-        amount  , // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+        amount : Amount   , // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
         currency: 'INR',
         name: 'Skill Skisha',
         description: 'Payment for Course',

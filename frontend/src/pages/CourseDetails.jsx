@@ -16,7 +16,7 @@ import { buyCourse } from "../services/operations/studentFeaturesAPI"
 import GetAvgRating from "../utils/avgRating"
 import Error from "./Error"
 import toast from "react-hot-toast";
-import { addToCart } from "../slices/cartSlice";
+import { addToCart, resetCart } from "../slices/cartSlice";
 
 function CourseDetails() {
   const location = useLocation();
@@ -34,6 +34,7 @@ function CourseDetails() {
 
   let paymentSuccess = queryParams.get("paymentSuccess");
   const ref = queryParams.get("reference");
+  let multipleCourses = queryParams.get("multipleCourses");
 
   // Getting courseId from url parameter
   const { courseId } = useParams()
@@ -63,7 +64,12 @@ function CourseDetails() {
       //   btn2Text: "Continue Browsing",
       //   btn1Handler: () => navigate("/dashboard/enrolled-courses"),
       //   btn2Handler: () => navigate("/"),
-      // })
+      // })i
+
+        if ( multipleCourses ) {
+          dispatch(resetCart()) ;
+        }
+
       toast.success("Payment Successful! You have been enrolled in the course.", {
         duration: 2000,
         position: "top-center",
