@@ -11,6 +11,7 @@ import StatsComponenet from "../components/core/AboutPage/Stats"
 import HighlightText from "../components/core/HomePage/HighlightText"
 import ReviewSlider from "../components/common/ReviewSlider"
 import Footer from "../components/common/Footer"
+import { ThreeDMarqueeDemo } from "../components/aceternity/ThreeDMarqueeDemo"
 
 const About = () => {
   return (
@@ -27,14 +28,10 @@ const About = () => {
               and nurturing a vibrant learning community.
             </p>
           </header>
-          <div className="sm:h-[70px] lg:h-[150px]"></div>
-          <div className="absolute bottom-0 left-[50%] grid w-[100%] translate-x-[-50%] translate-y-[30%] grid-cols-3 gap-3 lg:gap-5">
-            <img src={BannerImage1} alt="" />
-            <img src={BannerImage2} alt="" />
-            <img src={BannerImage3} alt="" />
-          </div>
         </div>
       </section>
+
+      <ThreeDMarqueeDemo/>
 
       <section className="border-b border-richblack-700">
         <div className="mx-auto flex w-11/12 max-w-maxContent flex-col justify-between gap-10 text-[#F1F2FF]00">
