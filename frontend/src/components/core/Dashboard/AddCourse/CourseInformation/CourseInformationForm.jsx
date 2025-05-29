@@ -168,7 +168,7 @@ export default function CourseInformationForm() {
           id="courseTitle"
           placeholder="Enter Course Title"
           {...register("courseTitle", { required: true })}
-          className="form-style w-full text-white bg-[#2C333F] p-3 rounded-md border-b-2 border-white focus:border-2 outline-none"
+          className="form-style w-full text-white bg-[#2C333F] p-3 rounded-md border-b-4 border-t-2 border-[#7b8fd9] focus:border-2 outline-none"
         />
         {errors.courseTitle && (
           <span className="ml-2 text-xs tracking-wide text-pink-200">
@@ -185,7 +185,7 @@ export default function CourseInformationForm() {
           id="courseShortDesc"
           placeholder="Enter Description"
           {...register("courseShortDesc", { required: true })}
-          className="form-style resize-x-none min-h-[130px] w-full text-white bg-[#2C333F] p-3 rounded-md border-b-2 border-white focus:border-2 outline-none"
+          className="form-style resize-x-none min-h-[130px] w-full text-white bg-[#2C333F] p-3 rounded-md border-b-4 border-t-2 border-[#7b8fd9] focus:border-2 outline-none"
         />
         {errors.courseShortDesc && (
           <span className="ml-2 text-xs tracking-wide text-pink-200">
@@ -210,7 +210,7 @@ export default function CourseInformationForm() {
                 value: /^(0|[1-9]\d*)(\.\d+)?$/,
               },
             })}
-            className="form-style w-full !pl-12 text-white bg-[#2C333F] p-3 rounded-md border-b-2 border-white focus:border-2 outline-none"
+            className="form-style w-full !pl-12 text-white bg-[#2C333F] p-3 rounded-md border-b-4 border-t-2 border-[#7b8fd9] focus:border-2 outline-none"
           />
           <HiOutlineCurrencyRupee className="absolute left-3 top-1/2 inline-block -translate-y-1/2 text-2xl text-[#6E727F]" />
         </div>
@@ -230,7 +230,7 @@ export default function CourseInformationForm() {
           {...register("courseCategory", { required: true })}
           defaultValue=""
           id="courseCategory"
-          className="form-style w-full text-white bg-[#2C333F] p-3 rounded-md border-b-2 border-white focus:border-2 outline-none"
+          className="form-style w-full text-white bg-[#2C333F] p-3 rounded-md border-b-4 border-t-2 border-[#7b8fd9] focus:border-2 outline-none"
         >
           <option value="" disabled>
             Choose a Category
@@ -279,7 +279,7 @@ export default function CourseInformationForm() {
           id="courseBenefits"
           placeholder="Enter benefits of the course"
           {...register("courseBenefits", { required: true })}
-          className="form-style resize-x-none min-h-[130px] w-full text-white bg-[#2C333F] p-3 rounded-md border-b-2 border-white focus:border-2 outline-none"
+          className="form-style resize-x-none min-h-[130px] w-full text-white bg-[#2C333F] p-3 rounded-md border-b-4 border-t-2 border-[#7b8fd9] focus:border-2 outline-none"
         />
         {errors.courseBenefits && (
           <span className="ml-2 text-xs tracking-wide text-pink-200">

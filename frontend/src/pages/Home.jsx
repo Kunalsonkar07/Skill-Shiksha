@@ -13,6 +13,8 @@ import { ColourfulTextDemo } from "../components/aceternity/ColourfulTextDemo";
 import SearchBar from "../components/core/HomePage/SearchBar";
 import CourseSlider from "../components/common/CourseSlider";
 import ReviewSlider from "../components/common/ReviewSlider.jsx";
+import { BackgroundBoxesDemo } from "../components/aceternity/BackgroundBoxesDemo.jsx";
+import { ThreeDMarqueeDemo } from "../components/aceternity/ThreeDMarqueeDemo.jsx";
 
 const Home = () => {
   return (
@@ -34,7 +36,9 @@ const Home = () => {
         <PlaceholdersAndVanishInputDemo />
         <HeroParallaxDemo />
         <ColourfulTextDemo />
+        <ThreeDMarqueeDemo/>
         <GlowingEffectDemoSecond />
+        <BackgroundBoxesDemo/>
         <div className="w-full flex justify-between align-middle">
           <div className="w-1/2">
             <ThreeDCardDemo />

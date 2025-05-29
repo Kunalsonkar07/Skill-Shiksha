@@ -105,7 +105,7 @@ const CourseBuilderForm = () => {
               placeholder='Add a section to build your course'
               {...register("sectionName", { required: true })}
               className='text-[#999DAA] bg-[#2C333F] p-2 rounded-md  
-              border-b-2 border-white focus:border-2 outline-none w-full'
+              border-b-4 border-t-2 border-[#7b8fd9] focus:border-2 outline-none w-full'
             />
             {errors.sectionName && (
               <p className='text-pink-300 text-sm'>Section name is required</p>
