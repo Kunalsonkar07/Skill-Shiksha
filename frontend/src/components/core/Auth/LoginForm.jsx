@@ -1,33 +1,70 @@
-import { useState } from "react"
-import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
-import { useDispatch } from "react-redux"
-import { Link, useNavigate } from "react-router-dom"
+import { useState } from "react";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 
-import { login } from "../../../services/operations/authAPI"
-import '../../common/rainbow-button.css'
+import { login } from "../../../services/operations/authAPI";
+import "../../common/rainbow-button.css";
+// import { GoogleAuthProvider } from "firebase/auth";
+import {app} from "./firebase" 
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+// import toast from "daisyui/components/toast";
+// import { toast } from "react-hot-toast"
+
 function LoginForm() {
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-  })
+  });
 
-  const [showPassword, setShowPassword] = useState(false)
+  const [showPassword, setShowPassword] = useState(false);
 
-  const { email, password } = formData
+  const { email, password } = formData;
 
   const handleOnChange = (e) => {
     setFormData((prevData) => ({
       ...prevData,
       [e.target.name]: e.target.value,
-    }))
-  }
+    }));
+  };
 
   const handleOnSubmit = (e) => {
-    e.preventDefault()
-    dispatch(login(email, password, navigate))
-  }
+    e.preventDefault();
+    dispatch(login(email, password, navigate));
+  };
+
+  const provider = new GoogleAuthProvider();
+  provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
+
+  const auth = getAuth(app);
+  const googleSignin = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+        console.log(user);
+        dispatch(login(user.email, "123", navigate));
+        // IdP data available using getAdditionalUserInfo(result)
+        // ...
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
+        // toast.error("Google Sign In Failed");
+        // console.log("Google Sign In Error:", errorCode, errorMessage, email, credential);
+      });
+  };
 
   return (
     <form
@@ -85,13 +122,20 @@ function LoginForm() {
       </label>
       <button
         type="submit"
-        className="mt-6 rounded-[8px] bg-orange-500 py-[8px] px-[12px] font-medium text-[#000814]"
+        className="mt-6 rounded-[8px] bg-orange-500 py-[8px] px-[12px] font-medium text-[#000814] cursor-pointer"
       >
         Sign In
       </button>
-
+      <p className="text-center font-bold">OR</p>
+      <button
+        type="button"
+        className="rounded-[8px] bg-orange-500 py-[8px] px-[12px] font-bold text-white cursor-pointer"
+        onClick={googleSignin}
+      >
+        Sign In With Google
+      </button>
     </form>
-  )
+  );
 }
 
-export default LoginForm
+export default LoginForm;

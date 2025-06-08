@@ -25,6 +25,7 @@ const ChipInput = ({name,placeholder,label,register,errors,setValue,getValues}) 
 
     const handleKeyDown = (event) => {
         // Check if user presses "Enter" or ","
+        // console.log(event.key);
         if (event.key === "Enter" || event.key === ",") {
           // Prevent the default behavior of the event
           event.preventDefault()

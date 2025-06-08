@@ -140,7 +140,7 @@ function CourseDetails() {
     console.log("token: ", token)
     console.log(typeof token)
     if (token) {
-      buyCourse(token, [courseId], user, navigate, dispatch)
+      buyCourse(token, [courseId], user, navigate, dispatch)  //TODO:
       return
     }
     setConfirmationModal({

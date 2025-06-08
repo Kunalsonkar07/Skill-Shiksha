@@ -34,7 +34,7 @@ export default function PublishCourse() {
 
   const handleCoursePublish = async () => {
     // check if form has been updated or not
-    if (
+    if (          // if course is already published and form is not updated
       (course?.status === COURSE_STATUS.PUBLISHED &&
         getValues("public") === true) ||
       (course?.status === COURSE_STATUS.DRAFT && getValues("public") === false)

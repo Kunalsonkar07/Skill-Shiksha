@@ -13,7 +13,7 @@ const {
 } = settingsEndpoints
 
 export function updateDisplayPicture(token, formData) {
-    console.log("FormData: ",formData);
+    // console.log("FormData: ",formData.get("displayPicture"));
 
   return async (dispatch) => {
     const toastId = toast.loading("Loading...")

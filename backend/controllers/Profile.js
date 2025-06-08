@@ -23,6 +23,7 @@ exports.updateProfile = async (req, res) => {
     const userDetails = await User.findById(id)
     const profile = await Profile.findById(userDetails.additionalDetails)
 
+    // console.log("Profile Details: ", userDetails.additionalDetails)
     const user = await User.findByIdAndUpdate(id, {
       firstName,
       lastName,
@@ -117,6 +118,7 @@ exports.getAllUserDetails = async (req, res) => {
 exports.updateDisplayPicture = async (req, res) => {
   try {
     const displayPicture = req.files.displayPicture
+    // console.log("Inside updateDisplayPicture: ", displayPicture)
     const userId = req.user.id
     const image = await uploadImageToCloudinary(
       displayPicture,
@@ -124,7 +126,7 @@ exports.updateDisplayPicture = async (req, res) => {
       1000,
       1000
     )
-    console.log(image)
+    // console.log("inside updateDisplayPicture ", image)
     const updatedProfile = await User.findByIdAndUpdate(
       { _id: userId },
       { image: image.secure_url },
@@ -152,7 +154,7 @@ exports.getEnrolledCourses = async (req, res) => {
       .populate({
         path: "courses",
         populate: {
-          path: "courseContent",
+          path: "courseContent",      //means we are populating section inside which we will populate subsection
           populate: {
             path: "subSection",
           },
@@ -168,9 +170,10 @@ exports.getEnrolledCourses = async (req, res) => {
         totalDurationInSeconds += userDetails.courses[i].courseContent[
           j
         ].subSection.reduce((acc, curr) => acc + parseInt(curr.timeDuration), 0)
+        // console.log("Inside Backend: ", userDetails.courses[i])
         userDetails.courses[i].totalDuration = convertSecondsToDuration(
           totalDurationInSeconds
-        )
+        )       // adding this attribute to the course object
         SubsectionLength +=
           userDetails.courses[i].courseContent[j].subSection.length
       }

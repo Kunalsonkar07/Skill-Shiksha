@@ -60,7 +60,7 @@ export default function Navbar() {
         <a
           className="flex justify-center items-center gap-x-3"
           href="/"
-          aria-label="CodeHelp Logo"
+          aria-label="SkillShiksa logo"
         >
           <div>SkillSkishka</div>
         </a>

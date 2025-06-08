@@ -32,6 +32,7 @@
     "dotenv": "^16.4.5",
     "express": "^4.21.0",
     "express-fileupload": "^1.5.1",
+    "firebase": "^11.9.0",
     "framer-motion": "^12.4.10",
     "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.477.0",

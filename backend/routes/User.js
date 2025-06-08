@@ -3,6 +3,7 @@ const router = express.Router()
 
 const {
   login,
+  googlelogin,
   signup,
   sendotp,
   changePassword,
@@ -17,6 +18,8 @@ const { auth } = require("../middlewares/auth")
 
 // Route for user login
 router.post("/login", login)
+
+router.post("/googleLogin", googlelogin)
 
 // Route for user signup
 router.post("/signup", signup)
