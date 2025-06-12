@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useEffect } from "react";
-import image from '../../assets/Images/websiteherosection.png'
+import addCourses from "../../assets/image/addCourses.png"
 
 const CardSection2 = () => {
   const cardRef = useRef(null);
@@ -93,13 +93,13 @@ const CardSection2 = () => {
         >
           <div className="flex flex-col gap-y-8 items-start">
             <div className="flex flex-col gap-y-3">
-              <p className="font-semibold text-lg text-[#7b8fd9]">Demo</p>
+              <p className="font-semibold text-lg text-[#7b8fd9]">Empower</p>
               <p className="text-white font-semibold text-3xl leading-snug">
-                Explore Innovative Projects with SkillShiksha
+                Become an Instructor, Share Knowledge
               </p>
               <p className="text-base text-[#b0b0b0] font-medium">
-                "From interactive web applications to cutting-edge software solutions,
-                SkillShiksha is the space where ideas flourish and collaborations thrive."
+                Create and publish your own courses with ease. From uploading lectures to editing content, 
+      SkillShiksha gives you full control. Track your success with real-time analytics. Start teaching today!
               </p>
             </div>
 
@@ -115,7 +115,7 @@ const CardSection2 = () => {
                 height="300"
                 decoding="async"
                 className="rounded-xl object-cover"
-                src={image}
+                src={addCourses}
               />
             </div>
           </div>

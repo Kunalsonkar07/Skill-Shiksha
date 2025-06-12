@@ -1,6 +1,21 @@
 "use client";
 import React from "react";
 import { HeroParallax } from "../ui/hero-parallax";
+import login from '../../assets/image/login.png'
+import cards from '../../assets/image/cards.png'
+import cart from '../../assets/image/cart.png'
+import chats from '../../assets/image/chats.png'
+import payment from '../../assets/image/payment.png'
+import educational from '../../assets/image/educational.png'
+import highlightcard from '../../assets/image/highlightcard.png'
+import wagonwheel from '../../assets/image/wagonwheel.png'
+import twocards from '../../assets/image/twocards.png'
+import markascompletelecture from '../../assets/image/markascompletelecture.png'
+import codecompile from '../../assets/image/codecompile.png'
+import lecture from '../../assets/image/lecture.png'
+import topCourses from '../../assets/image/topCourses.png'
+import chatapp from "../../assets/Images/chatapp.png"
+
 
 export function HeroParallaxDemo() {
   return <HeroParallax products={products} />;
@@ -8,78 +23,81 @@ export function HeroParallaxDemo() {
 
 export const products = [
   {
-    title: "Moonbeam",
-    link: "https://gomoonbeam.com",
-    thumbnail: "https://aceternity.com/images/products/thumbnails/new/moonbeam.png",
+    title: "card",
+    link: "/",
+    thumbnail:highlightcard,
   },
   {
-    title: "Cursor",
-    link: "https://cursor.so",
-    thumbnail: "https://aceternity.com/images/products/thumbnails/new/cursor.png",
+    title: "lecture",
+    link: "/",
+    thumbnail:markascompletelecture,
   },
   {
-    title: "Rogue",
-    link: "https://userogue.com",
-    thumbnail: "https://aceternity.com/images/products/thumbnails/new/rogue.png",
+    title: "lecture page",
+    link: "/",
+    thumbnail:lecture,
+    
   },
   {
-    title: "Editorially",
-    link: "https://editorially.org",
-    thumbnail: "https://aceternity.com/images/products/thumbnails/new/editorially.png",
+    title: "payment",
+    link: "/",
+    thumbnail:payment,
+    
   },
   {
-    title: "Editrix AI",
-    link: "https://editrix.ai",
-    thumbnail: "https://aceternity.com/images/products/thumbnails/new/editrix.png",
+    
+    title: "chat",
+    link: "/",
+    thumbnail:chatapp,
   },
   {
-    title: "Pixel Perfect",
-    link: "https://app.pixelperfect.quest",
-    thumbnail: "https://aceternity.com/images/products/thumbnails/new/pixelperfect.png",
+    title: "card",
+    link: "/",
+    thumbnail:cards,
   },
   {
-    title: "Algochurn",
-    link: "https://algochurn.com",
-    thumbnail: "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
+    title: "card",
+    link: "/",
+    thumbnail:twocards,
   },
   {
-    title: "Aceternity UI",
-    link: "https://ui.aceternity.com",
-    thumbnail: "https://aceternity.com/images/products/thumbnails/new/aceternityui.png",
+    title: "summary",
+    link: "/",
+    thumbnail:wagonwheel,
   },
   {
-    title: "Tailwind Master Kit",
-    link: "https://tailwindmasterkit.com",
-    thumbnail: "https://aceternity.com/images/products/thumbnails/new/tailwindmasterkit.png",
+    title: "login",
+    link: "/",
+    thumbnail:login,
   },
   {
-    title: "SmartBridge",
-    link: "https://smartbridgetech.com",
-    thumbnail: "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
+    title: "cart page",
+    link: "/",
+    thumbnail:cart,
   },
   {
-    title: "Renderwork Studio",
-    link: "https://renderwork.studio",
-    thumbnail: "https://aceternity.com/images/products/thumbnails/new/renderwork.png",
+    title: "login page",
+    link: "/",
+    thumbnail:login,
   },
   {
-    title: "Creme Digital",
-    link: "https://cremedigital.com",
-    thumbnail: "https://aceternity.com/images/products/thumbnails/new/cremedigital.png",
+    title: "chat page",
+    link: "/",
+    thumbnail:chats,
   },
   {
-    title: "Golden Bells Academy",
-    link: "https://goldenbellsacademy.com",
-    thumbnail: "https://aceternity.com/images/products/thumbnails/new/goldenbellsacademy.png",
+    title: "hero section",
+    link: "/",
+    thumbnail:educational,
   },
   {
-    title: "Invoker Labs",
-    link: "https://invoker.lol",
-    thumbnail: "https://aceternity.com/images/products/thumbnails/new/invoker.png",
+    title: "hero section",
+    link:"/",
+    thumbnail:codecompile,
   },
   {
-    title: "E Free Invoice",
-    link: "https://efreeinvoice.com",
-    thumbnail: "https://aceternity.com/images/products/thumbnails/new/efreeinvoice.png",
+    title: "courses",
+    link: "/",
+    thumbnail: topCourses,
   },
 ];

@@ -93,7 +93,7 @@ const CardSection = () => {
         >
           <div className="flex flex-col gap-y-8 items-start">
             <div className="flex flex-col gap-y-3">
-              <p className="font-semibold text-lg text-[#7b8fd9]">Demo</p>
+              <p className="font-semibold text-lg text-[#7b8fd9]">SkillShiksha</p>
               <p className="text-white font-semibold text-3xl leading-snug">
                 Explore Innovative Projects with SkillShiksha
               </p>
