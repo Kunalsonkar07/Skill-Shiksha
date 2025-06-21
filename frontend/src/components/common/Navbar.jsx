@@ -10,6 +10,7 @@ import { BsChevronDown } from "react-icons/bs"
 import { matchPath, useLocation } from "react-router-dom"
 import { NavbarLinks } from "../../data/navbar-links"
 import { BsCart } from "react-icons/bs";
+import logo  from "../../assets/skill_logo.png";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -62,7 +63,9 @@ export default function Navbar() {
           href="/"
           aria-label="SkillShiksa logo"
         >
-          <div>SkillSkishka</div>
+          <img src={logo} className="w-30 h-22 object-cover" alt="SkillShiksa Logo">
+            {/* {logo} */}
+            </img>
         </a>
 
         <ul className="hidden items-center gap-x-8  lg:flex text-neutral-9 dark:text-neutral-2">

@@ -8,7 +8,10 @@ export default function Cart() {
 
   return (
     <div className="text-[#F1F2FF]0 mt-6 ml-4 w-11/12 flex flex-col gap-8">
-      <h1 className="mb-14 text-3xl font-medium text-[#F1F2FF]">Cart</h1>
+      <div className="section_heading text-5xl font-bold text-[#7b8fd9] inline-block relative">
+        Cart
+        <span className="absolute left-0 -bottom-1 w-full h-2 bg-[#7b8fd9] blur-sm opacity-60"></span>
+      </div>
       <p className="border-b border-b-richblack-400 pb-2 font-semibold text-[#6E727F]">
         {totalItems} Courses in Cart
       </p>
