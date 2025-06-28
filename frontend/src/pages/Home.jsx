@@ -18,19 +18,19 @@ import { ThreeDMarqueeDemo } from "../components/aceternity/ThreeDMarqueeDemo.js
 
 const Home = () => {
   return (
-    <div>
+    <div className="pt-10">
       {/* Section 1 */}
       <SearchBar />
       <div className="relative mx-auto flex flex-col w-11/12 items-center text-white justify-between max-w-maxContent">
         {/* Become an Instructor Link */}
-        <Link to={"/signup"}>
+        {/* <Link to={"/signup"}>
           <div className="group mt-16 p-1 mx-auto font-bold rounded-full bg-[#161D29] text-[#999DAA] transition-all duration-200 hover:scale-95 w-fit">
             <div className="flex items-center gap-2 rounded-full transition-all duration-200 px-10 py-[5px] group-hover:bg-[#000814]">
               <p>Become an Instructor</p>
               <FaArrowRight />
             </div>
           </div>
-        </Link>
+        </Link> */}
 
         {/* Demos and Components */}
         <PlaceholdersAndVanishInputDemo />

@@ -167,7 +167,6 @@ const Catalog = () => {
             <div className="py-8">
   <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
     {catalogPageData?.data?.mostSellingCourses
-      ?.slice(0, 4)
       .map((course, i) => (
         <CourseCard course={course} key={i} Height="h-[400px]" />
       ))}

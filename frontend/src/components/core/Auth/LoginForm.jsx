@@ -3,7 +3,7 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
-import { login } from "../../../services/operations/authAPI";
+import { login , loginWithGoogle } from "../../../services/operations/authAPI";
 import "../../common/rainbow-button.css";
 // import { GoogleAuthProvider } from "firebase/auth";
 import {app} from "./firebase" 
@@ -48,7 +48,7 @@ function LoginForm() {
         // The signed-in user info.
         const user = result.user;
         console.log(user);
-        dispatch(login(user.email, "123", navigate));
+        dispatch(loginWithGoogle(user.email,navigate));
         // IdP data available using getAdditionalUserInfo(result)
         // ...
       })
@@ -122,14 +122,14 @@ function LoginForm() {
       </label>
       <button
         type="submit"
-        className="mt-6 rounded-[8px] bg-orange-500 py-[8px] px-[12px] font-medium text-[#000814] cursor-pointer"
+        className="mt-6 rounded-[8px] bg-orange-500 font-bold py-[8px] px-[12px] text-[#000814] cursor-pointer"
       >
         Sign In
       </button>
       <p className="text-center font-bold">OR</p>
       <button
         type="button"
-        className="rounded-[8px] bg-orange-500 py-[8px] px-[12px] font-bold text-white cursor-pointer"
+        className="rounded-[8px] bg-orange-500 py-[8px] px-[12px] font-bold text-black cursor-pointer"
         onClick={googleSignin}
       >
         Sign In With Google
